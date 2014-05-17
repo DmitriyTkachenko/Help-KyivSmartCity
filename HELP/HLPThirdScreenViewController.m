@@ -20,12 +20,22 @@
 {
     MKCoordinateRegion mapRegion;
     mapRegion.center = mapView.userLocation.coordinate;
-    mapRegion.span.latitudeDelta = 0.005;
-    mapRegion.span.longitudeDelta = 0.005;
+    mapRegion.span.latitudeDelta = 2;
+    mapRegion.span.longitudeDelta = 2;
     
     [mapView setRegion:mapRegion animated: YES];
     //[HLPPosition sharedHLPPositionManager].coordinates = userLocation.location.coordinate;
     [[HLPPosition sharedHLPPositionManager] setCoordinates:userLocation.location.coordinate];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(setButtonTitle)
+     name:@"Geocoding Done"
+     object:nil];
+}
+
+- (void)setButtonTitle
+{
     [self.addressButton setTitle:[[HLPPosition sharedHLPPositionManager] address] forState:UIControlStateNormal];
 }
 

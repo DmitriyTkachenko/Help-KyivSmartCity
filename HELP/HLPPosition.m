@@ -49,12 +49,19 @@ static HLPPosition *hLPPosition = nil;
 - (void)setCoordinates:(CLLocationCoordinate2D)coordinates
 {
     _coordinates = coordinates;
-
+    if (!self.geocoder) {
+        self.geocoder = [[CLGeocoder alloc] init];
+    }
     [_geocoder
      reverseGeocodeLocation:[[[CLLocation alloc] init] initWithLatitude:coordinates.latitude longitude:coordinates.longitude]
      completionHandler:^(NSArray *placemarks, NSError *error) {
          if (placemarks) {
-             self.address = [(CLPlacemark*) placemarks[0] country]; }
+             NSDictionary *dictionary = [(CLPlacemark *) placemarks[0] addressDictionary];
+             NSString *street = [[NSString alloc] initWithString:dictionary[@"Street"]];
+             self.address = street;
+             NSLog(@"Done");
+             [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"Geocoding Done" object:self.address]];
+         }
      }];
 }
 

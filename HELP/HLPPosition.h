@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) NSString * address;
 @property (nonatomic) CLLocationCoordinate2D coordinates;
+@property (nonatomic, strong) NSString *JSONCoordinates;
 
 -(void)findCurrentLocation;
 
