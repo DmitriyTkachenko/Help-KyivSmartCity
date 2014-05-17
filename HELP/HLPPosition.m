@@ -49,13 +49,23 @@ static HLPPosition *hLPPosition = nil;
 - (void)setCoordinates:(CLLocationCoordinate2D)coordinates
 {
     _coordinates = coordinates;
-    
+    if (!self.geocoder) {
+        self.geocoder = [[CLGeocoder alloc] init];
+    }
     [_geocoder
      reverseGeocodeLocation:[[[CLLocation alloc] init] initWithLatitude:coordinates.latitude longitude:coordinates.longitude]
      completionHandler:^(NSArray *placemarks, NSError *error) {
-         if (placemarks)
-             self.address = [(CLPlacemark*) placemarks[0] country];
-    }];
+         if (placemarks) {
+             NSDictionary *dictionary = [(CLPlacemark *) placemarks[0] addressDictionary];
+             //NSString *house = [[NSString alloc] initWithString:dictionary[@"subThoroughfare"]];
+             if (dictionary[@"Street"] && dictionary[@"SubThoroughfare"]) {
+                 _street = [[NSString alloc] initWithString:dictionary[@"Street"]];
+                 _house = [[NSString alloc] initWithString:dictionary[@"SubThoroughfare"]];
+             }
+             self.address = [[NSString alloc] initWithString:dictionary[@"Street"]];
+             [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"Geocoding Done" object:self.address]];
+         }
+     }];
 }
 
 -(void)findCurrentLocation
@@ -87,6 +97,7 @@ static HLPPosition *hLPPosition = nil;
                              
                          }
                      }];
+    
     // NSLog(self.address);
 }
 

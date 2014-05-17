@@ -14,7 +14,10 @@
 @interface HLPPosition : NSObject <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) NSString * address;
+@property (nonatomic, strong) NSString * street;
+@property (nonatomic, strong) NSString * house;
 @property (nonatomic) CLLocationCoordinate2D coordinates;
+@property (nonatomic, strong) NSString *JSONCoordinates;
 
 -(void)findCurrentLocation;
 

@@ -10,8 +10,8 @@
 
 @interface HLPThirdScreenViewController () <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
-
+@property (weak, nonatomic) IBOutlet UIButton *addressButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @end
 
 @implementation HLPThirdScreenViewController
@@ -23,8 +23,22 @@
     mapRegion.span.longitudeDelta = 0.005;
     
     [mapView setRegion:mapRegion animated: YES];
-    [HLPPosition sharedHLPPositionManager].coordinates = userLocation.location.coordinate;
-    
+    [[HLPPosition sharedHLPPositionManager] setCoordinates:userLocation.location.coordinate];
+    [self.spinner startAnimating];
+    [[NSNotificationCenter defaultCenter]
+                                            addObserver:self
+                                            selector:@selector(setButtonTitle)
+                                            name:@"Geocoding Done"
+                                            object:nil];
+}
+- (IBAction)cancellCall:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)setButtonTitle
+{
+    [self.addressButton setTitle:[[HLPPosition sharedHLPPositionManager] address] forState:UIControlStateNormal];
+    [self.spinner stopAnimating];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -49,6 +63,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)awakeFromNib
+{
+    [self.navigationItem setHidesBackButton:YES];
+}
 /*
 #pragma mark - Navigation
 

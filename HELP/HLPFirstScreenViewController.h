@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HLPThirdScreenViewController.h"
 
 @interface HLPFirstScreenViewController : UIViewController
 

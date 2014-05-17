@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ziz-rR-022">
-                                <rect key="frame" x="10" y="73" width="303" height="210"/>
+                                <rect key="frame" x="9" y="73" width="303" height="210"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpE-NR-Ufq">
@@ -26,6 +26,9 @@
                                 <state key="normal" title="Отменить вызов">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancellCall:" destination="kV8-F7-sN7" eventType="touchUpInside" id="rur-dW-E1p"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKu-5O-oEU">
                                 <rect key="frame" x="104" y="291" width="115" height="30"/>
@@ -41,7 +44,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HZg-fC-eZH">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HZg-fC-eZH">
                                 <rect key="frame" x="293" y="523" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
@@ -50,7 +53,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="768-ru-BXB"/>
                     <connections>
+                        <outlet property="addressButton" destination="wd2-B4-QCI" id="5do-zF-De9"/>
                         <outlet property="mapView" destination="ziz-rR-022" id="YlW-FZ-mcT"/>
+                        <outlet property="spinner" destination="HZg-fC-eZH" id="WDj-a5-1dS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Av-5z-Yyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
