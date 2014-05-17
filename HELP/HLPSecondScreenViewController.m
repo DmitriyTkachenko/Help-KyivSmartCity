@@ -11,7 +11,7 @@
 #import "HLPPosition.h"
 
 @interface HLPSecondScreenViewController ()
-@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton *addressButton;
 @end
 
@@ -33,7 +33,9 @@
     
     [[HLPPosition sharedHLPPositionManager] findCurrentLocation];
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[[HLPPosition sharedHLPPositionManager] coordinates].latitude longitude:[[HLPPosition sharedHLPPositionManager] coordinates].longitude zoom:6];
-    _mapView = [GMSMapView mapWithFrame:_mapView.frame camera:camera];
+    GMSMapView * mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    
+    self.mapView = mapView_;
     
 }
 
