@@ -36,11 +36,10 @@
     }
 }
 
--(void)saveUserWithName:(NSString *)name andPhone:(NSString *)phone andToken:(NSString *)token
+-(void)saveUserWithName:(NSString *)name andPhone:(NSString *)phone
 {
     [[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
     [[NSUserDefaults standardUserDefaults] setObject:phone forKey:@"phone"];
-    [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"token"];
     
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -87,7 +86,7 @@
     
     NSLog(@"Response : %@", dictionary);
     
-    [self saveUserWithName:self.nameField.text andPhone:self.phoneField.text andToken:@""];
+    [self saveUserWithName:self.nameField.text andPhone:self.phoneField.text];
     
     if([dictionary[@"status"] isEqualToString:@"waiting for sms"])
     {

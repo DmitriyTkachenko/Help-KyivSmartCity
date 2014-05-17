@@ -83,8 +83,10 @@
     
     NSLog(@"Response : %@", dictionary);
     
-    [[NSUserDefaults standardUserDefaults] setObject:dictionary[@"token"] forKey:@"token"];
-    
+    if([dictionary[@"status"] isEqualToString:@"success activation!"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:dictionary[@"token"] forKey:@"token"];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 //    if([dictionary[@"status"] isEqualToString:@"waiting for sms"])
 //    {
 //        // segue
