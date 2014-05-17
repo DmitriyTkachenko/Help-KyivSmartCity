@@ -57,9 +57,12 @@ static HLPPosition *hLPPosition = nil;
      completionHandler:^(NSArray *placemarks, NSError *error) {
          if (placemarks) {
              NSDictionary *dictionary = [(CLPlacemark *) placemarks[0] addressDictionary];
-             NSString *street = [[NSString alloc] initWithString:dictionary[@"Street"]];
-             self.address = street;
-             NSLog(@"Done");
+             //NSString *house = [[NSString alloc] initWithString:dictionary[@"subThoroughfare"]];
+             if (dictionary[@"Street"] && dictionary[@"SubThoroughfare"]) {
+                 _street = [[NSString alloc] initWithString:dictionary[@"Street"]];
+                 _house = [[NSString alloc] initWithString:dictionary[@"SubThoroughfare"]];
+             }
+             self.address = [[NSString alloc] initWithString:dictionary[@"Street"]];
              [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"Geocoding Done" object:self.address]];
          }
      }];

@@ -34,7 +34,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    HLPThirdScreenViewController *tsvc = [[HLPThirdScreenViewController alloc] init];
+    [self.navigationController pushViewController:tsvc animated:YES];
+}
 /*
 #pragma mark - Navigation
 
