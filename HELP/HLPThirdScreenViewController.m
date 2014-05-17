@@ -10,6 +10,7 @@
 
 @interface HLPThirdScreenViewController () <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIButton *addressButton;
 
 
 @end
@@ -23,8 +24,9 @@
     mapRegion.span.longitudeDelta = 0.005;
     
     [mapView setRegion:mapRegion animated: YES];
-    [HLPPosition sharedHLPPositionManager].coordinates = userLocation.location.coordinate;
-    
+    //[HLPPosition sharedHLPPositionManager].coordinates = userLocation.location.coordinate;
+    [[HLPPosition sharedHLPPositionManager] setCoordinates:userLocation.location.coordinate];
+    [self.addressButton setTitle:[[HLPPosition sharedHLPPositionManager] address] forState:UIControlStateNormal];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

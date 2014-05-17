@@ -49,13 +49,13 @@ static HLPPosition *hLPPosition = nil;
 - (void)setCoordinates:(CLLocationCoordinate2D)coordinates
 {
     _coordinates = coordinates;
-    
+
     [_geocoder
      reverseGeocodeLocation:[[[CLLocation alloc] init] initWithLatitude:coordinates.latitude longitude:coordinates.longitude]
      completionHandler:^(NSArray *placemarks, NSError *error) {
-         if (placemarks)
-             self.address = [(CLPlacemark*) placemarks[0] country];
-    }];
+         if (placemarks) {
+             self.address = [(CLPlacemark*) placemarks[0] country]; }
+     }];
 }
 
 -(void)findCurrentLocation
@@ -87,6 +87,7 @@ static HLPPosition *hLPPosition = nil;
                              
                          }
                      }];
+    
     // NSLog(self.address);
 }
 
@@ -109,7 +110,7 @@ static HLPPosition *hLPPosition = nil;
     // Should never be called, but just here for clarity really.
 }
 
--
+
 
 @end
 

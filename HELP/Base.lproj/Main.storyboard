@@ -50,6 +50,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="768-ru-BXB"/>
                     <connections>
+                        <outlet property="addressButton" destination="wd2-B4-QCI" id="5do-zF-De9"/>
                         <outlet property="mapView" destination="ziz-rR-022" id="YlW-FZ-mcT"/>
                     </connections>
                 </viewController>
