@@ -1,18 +1,18 @@
 //
-//  FirstScreenController.m
+//  HLPFirstScreenViewController.m
 //  HELP
 //
 //  Created by WildSpirit on 17.05.14.
 //  Copyright (c) 2014 WildSpirit. All rights reserved.
 //
 
-#import "FirstScreenController.h"
+#import "HLPFirstScreenViewController.h"
 
-@interface FirstScreenController ()
+@interface HLPFirstScreenViewController ()
 
 @end
 
-@implementation FirstScreenController
+@implementation HLPFirstScreenViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

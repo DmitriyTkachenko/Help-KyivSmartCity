@@ -1,5 +1,5 @@
 //
-//  FirstScreenController.h
+//  HLPFirstScreenViewController.h
 //  HELP
 //
 //  Created by WildSpirit on 17.05.14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstScreenController : UIViewController
+@interface HLPFirstScreenViewController : UIViewController
 
 @end

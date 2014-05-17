@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="162" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Second Screen Controller-->
         <scene sceneID="6yT-NO-qRd">
             <objects>
-                <viewController id="fAN-j1-FtS" sceneMemberID="viewController">
+                <viewController id="fAN-j1-FtS" customClass="SecondScreenController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ACq-QV-kp9"/>
                         <viewControllerLayoutGuide type="bottom" id="kHD-PB-bg0"/>
