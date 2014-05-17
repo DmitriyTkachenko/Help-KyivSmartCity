@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CLLocation *currentLocation;
+@property (nonatomic, strong) CLGeocoder *geocoder;
 
 @property (nonatomic, weak) HLPSecondScreenViewController * myController;
 
@@ -45,6 +46,18 @@ static HLPPosition *hLPPosition = nil;
     return self;
 }
 
+- (void)setCoordinates:(CLLocationCoordinate2D)coordinates
+{
+    _coordinates = coordinates;
+    
+    [_geocoder
+     reverseGeocodeLocation:[[[CLLocation alloc] init] initWithLatitude:coordinates.latitude longitude:coordinates.longitude]
+     completionHandler:^(NSArray *placemarks, NSError *error) {
+         if (placemarks)
+             self.address = [(CLPlacemark*) placemarks[0] country];
+    }];
+}
+
 -(void)findCurrentLocation
 {
     self.locationManager = [[CLLocationManager alloc] init];
@@ -74,7 +87,7 @@ static HLPPosition *hLPPosition = nil;
                              
                          }
                      }];
-    NSLog(self.address);
+    // NSLog(self.address);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
@@ -96,7 +109,7 @@ static HLPPosition *hLPPosition = nil;
     // Should never be called, but just here for clarity really.
 }
 
-
+-
 
 @end
 

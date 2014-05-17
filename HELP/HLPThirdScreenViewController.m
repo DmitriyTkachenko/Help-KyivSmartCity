@@ -23,6 +23,7 @@
     mapRegion.span.longitudeDelta = 0.005;
     
     [mapView setRegion:mapRegion animated: YES];
+    [HLPPosition sharedHLPPositionManager].coordinates = userLocation.location.coordinate;
     
 }
 

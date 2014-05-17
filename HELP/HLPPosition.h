@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import <MapKit/MapKit.h>
 
 @interface HLPPosition : NSObject <CLLocationManagerDelegate>
 
