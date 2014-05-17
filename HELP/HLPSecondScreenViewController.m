@@ -11,7 +11,7 @@
 #import "HLPPosition.h"
 
 @interface HLPSecondScreenViewController () <GMSMapViewDelegate>
-@property (weak, nonatomic) IBOutlet UIView *mapView;
+@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton *addressButton;
 @end
 
@@ -38,12 +38,10 @@
     
     self.mapView = mapView_;
     
-//    _mapView = [GMSMapView mapWithFrame:_mapView.frame camera:camera];
-//    GMSMarker *marker = [[GMSMarker alloc] init];
-//    marker.position = camera.target;
-//    marker.snippet = @"Вы здесь";
-//    // marker.animated = YES;
-//    marker.map = _mapView;
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = camera.target;
+    marker.snippet = @"Вы здесь";
+    marker.map = self.mapView;
 }
 
 - (void)didReceiveMemoryWarning
