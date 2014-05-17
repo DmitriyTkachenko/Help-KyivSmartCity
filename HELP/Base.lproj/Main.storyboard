@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Av-5z-Yyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="637" y="-529"/>
+            <point key="canvasLocation" x="677" y="127"/>
         </scene>
         <!--View Controller - FirstScreenController-->
         <scene sceneID="ufC-wZ-h7g">
@@ -100,36 +100,6 @@
             </objects>
             <point key="canvasLocation" x="162" y="134"/>
         </scene>
-        <!--Second Screen View Controller-->
-        <scene sceneID="6yT-NO-qRd">
-            <objects>
-                <viewController id="fAN-j1-FtS" customClass="HLPSecondScreenViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ACq-QV-kp9"/>
-                        <viewControllerLayoutGuide type="bottom" id="kHD-PB-bg0"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YfL-AZ-Pd8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zi0-54-JWS" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="99" width="320" height="254"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="clE-bW-mQ4"/>
-                    <connections>
-                        <outlet property="addressButton" destination="wd2-B4-QCI" id="Pvj-bq-7Q0"/>
-                        <outlet property="mapView" destination="Zi0-54-JWS" id="NPI-PA-RCQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8qz-vA-rlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="637" y="134"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="SdH-hw-AUV">
             <objects>
@@ -143,7 +113,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOP-H9-2Ih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-939" y="1622"/>
+            <point key="canvasLocation" x="-947" y="1214"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="kFR-vr-bZQ">
@@ -199,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4F8-ia-qYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-345" y="850"/>
+            <point key="canvasLocation" x="-353" y="1202"/>
         </scene>
         <!--Sms View Controller-->
         <scene sceneID="Auw-fU-1ju">
@@ -239,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6f-hi-ozn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="269" y="850"/>
+            <point key="canvasLocation" x="205" y="1202"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lQ5-Im-lM2">
