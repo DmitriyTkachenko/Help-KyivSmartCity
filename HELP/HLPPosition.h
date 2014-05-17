@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface HLPPosition : NSObject <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) NSString * address;
 @property (nonatomic) CLLocationCoordinate2D coordinates;
 
--(void)findCurrentLocation;
+- (void)findCurrentLocation;
 
 + (instancetype)sharedHLPPositionManager;
 
