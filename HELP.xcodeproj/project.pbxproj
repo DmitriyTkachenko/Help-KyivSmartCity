@@ -42,6 +42,7 @@
 		6588F3CC1927AAD800700E81 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6588F3CB1927AAD800700E81 /* MapKit.framework */; };
 		65EBCEBE19276C0C000B7FE8 /* HLPSecondScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EBCEBD19276C0C000B7FE8 /* HLPSecondScreenViewController.m */; };
 		65EBCEC119276C40000B7FE8 /* HLPFirstScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EBCEC019276C40000B7FE8 /* HLPFirstScreenViewController.m */; };
+		86A759E31927B2EB00E24B46 /* HLPServerManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A759E21927B2EB00E24B46 /* HLPServerManipulator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		65EBCEBD19276C0C000B7FE8 /* HLPSecondScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPSecondScreenViewController.m; sourceTree = "<group>"; };
 		65EBCEBF19276C40000B7FE8 /* HLPFirstScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPFirstScreenViewController.h; sourceTree = "<group>"; };
 		65EBCEC019276C40000B7FE8 /* HLPFirstScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPFirstScreenViewController.m; sourceTree = "<group>"; };
+		86A759E11927B2EB00E24B46 /* HLPServerManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPServerManipulator.h; sourceTree = "<group>"; };
+		86A759E21927B2EB00E24B46 /* HLPServerManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPServerManipulator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +206,8 @@
 				6572E10619275920009EEC0D /* HLPViewController.m */,
 				6572E10819275920009EEC0D /* Images.xcassets */,
 				6572E0F719275920009EEC0D /* Supporting Files */,
+				86A759E11927B2EB00E24B46 /* HLPServerManipulator.h */,
+				86A759E21927B2EB00E24B46 /* HLPServerManipulator.m */,
 			);
 			path = HELP;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86A759E31927B2EB00E24B46 /* HLPServerManipulator.m in Sources */,
 				6572E0FD19275920009EEC0D /* main.m in Sources */,
 				6572E10719275920009EEC0D /* HLPViewController.m in Sources */,
 				65EBCEC119276C40000B7FE8 /* HLPFirstScreenViewController.m in Sources */,
