@@ -1,21 +1,23 @@
 //
-//  HLPServerManipulator.m
+//  HLPRegistrationViewController.m
 //  HELP
 //
 //  Created by Vladislav on 5/17/14.
 //  Copyright (c) 2014 WildSpirit. All rights reserved.
 //
 
+#import "HLPRegistrationViewController.h"
+
 #import "HLPServerManipulator.h"
 
-@implementation HLPServerManipulator
+@implementation HLPRegistrationViewController
 {
     NSMutableData * mutableData;
 }
 
--(void)registerRequestWithName:(NSString *)name Phone:(NSString *)phoneNumber
+- (IBAction)sendTouched:(id)sender
 {
-    NSString *post = [NSString stringWithFormat:@"name=%@&phone=%@", [self urlEncodeValue: name], [self urlEncodeValue: phoneNumber]];
+    NSString *post = [NSString stringWithFormat:@"name=%@&phone=%@", [self urlEncodeValue: self.nameField.text], [self urlEncodeValue: self.phoneField.text]];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
@@ -34,6 +36,15 @@
     }
 }
 
+-(void)saveUserWithName:(NSString *)name andPhone:(NSString *)phone andToken:(NSString *)token
+{
+    [[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
+    [[NSUserDefaults standardUserDefaults] setObject:phone forKey:@"phone"];
+    [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"token"];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 #pragma mark -
 #pragma mark NSURLConnection delegates
 
@@ -49,15 +60,15 @@
 
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-//    [mutableData release];
-//    [connection release];
+    //    [mutableData release];
+    //    [connection release];
     
     // If we get any connection error we can manage it here…
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@”Alert” message:@”No Network Connection” delegate:self cancelButtonTitle:nil otherButtonTitles:@”OK”,nil];
-//    [alertView show];
-//    [alertView release];
+    //    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@”Alert” message:@”No Network Connection” delegate:self cancelButtonTitle:nil otherButtonTitles:@”OK”,nil];
+    //    [alertView show];
+    //    [alertView release];
     
-//    return;
+    //    return;
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -66,7 +77,7 @@
     NSLog(@"%@", responseStringWithEncoded);
     
     NSError * error;
-//    NSData * data = [@"{\"status\":\"asd\"}" dataUsingEncoding:NSUTF8StringEncoding];
+    //    NSData * data = [@"{\"status\":\"asd\"}" dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:mutableData options:kNilOptions error:&error];
     
     if(error)
@@ -76,7 +87,27 @@
     
     NSLog(@"Response : %@", dictionary);
     
+    [self saveUserWithName:self.nameField.text andPhone:self.phoneField.text andToken:@""];
+    
+    if([dictionary[@"status"] isEqualToString:@"waiting for sms"])
+    {
+        // segue
+        [self performSegueWithIdentifier:@"sms" sender:nil];
+    }
+    
     // You can do your functions here. If your repines is in XML you have to parse the response using NSXMLParser. If your response in JSON you have use SBJSON.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"sms"])
+    {
+//        TranslationQuizAssociateVC *translationQuizAssociateVC = [segue destinationViewController];
+//        translationQuizAssociateVC.nodeID = self.nodeID; //--pass nodeID from ViewNodeViewController
+//        translationQuizAssociateVC.contentID = self.contentID;
+//        translationQuizAssociateVC.index = self.index;
+//        translationQuizAssociateVC.content = self.content;
+    }
 }
 
 - (NSString *)urlEncodeValue:(NSString *)str

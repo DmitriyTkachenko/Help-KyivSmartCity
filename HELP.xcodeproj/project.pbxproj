@@ -43,6 +43,8 @@
 		65EBCEBE19276C0C000B7FE8 /* HLPSecondScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EBCEBD19276C0C000B7FE8 /* HLPSecondScreenViewController.m */; };
 		65EBCEC119276C40000B7FE8 /* HLPFirstScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EBCEC019276C40000B7FE8 /* HLPFirstScreenViewController.m */; };
 		86A759E31927B2EB00E24B46 /* HLPServerManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A759E21927B2EB00E24B46 /* HLPServerManipulator.m */; };
+		86A759E61927BF5400E24B46 /* HLPRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A759E51927BF5400E24B46 /* HLPRegistrationViewController.m */; };
+		86A759E91927D0A500E24B46 /* HLPSmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A759E81927D0A500E24B46 /* HLPSmsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,10 @@
 		65EBCEC019276C40000B7FE8 /* HLPFirstScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPFirstScreenViewController.m; sourceTree = "<group>"; };
 		86A759E11927B2EB00E24B46 /* HLPServerManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPServerManipulator.h; sourceTree = "<group>"; };
 		86A759E21927B2EB00E24B46 /* HLPServerManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPServerManipulator.m; sourceTree = "<group>"; };
+		86A759E41927BF5400E24B46 /* HLPRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPRegistrationViewController.h; sourceTree = "<group>"; };
+		86A759E51927BF5400E24B46 /* HLPRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPRegistrationViewController.m; sourceTree = "<group>"; };
+		86A759E71927D0A500E24B46 /* HLPSmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPSmsViewController.h; sourceTree = "<group>"; };
+		86A759E81927D0A500E24B46 /* HLPSmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPSmsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +204,8 @@
 				6572E0FF19275920009EEC0D /* HLPAppDelegate.h */,
 				6572E10019275920009EEC0D /* HLPAppDelegate.m */,
 				6572E10219275920009EEC0D /* Main.storyboard */,
+				86A759E71927D0A500E24B46 /* HLPSmsViewController.h */,
+				86A759E81927D0A500E24B46 /* HLPSmsViewController.m */,
 				6588F3C81927A9E700700E81 /* HLPThirdScreenViewController.h */,
 				6588F3C91927A9E700700E81 /* HLPThirdScreenViewController.m */,
 				65EBCEBC19276C0C000B7FE8 /* HLPSecondScreenViewController.h */,
@@ -208,6 +216,8 @@
 				6572E0F719275920009EEC0D /* Supporting Files */,
 				86A759E11927B2EB00E24B46 /* HLPServerManipulator.h */,
 				86A759E21927B2EB00E24B46 /* HLPServerManipulator.m */,
+				86A759E41927BF5400E24B46 /* HLPRegistrationViewController.h */,
+				86A759E51927BF5400E24B46 /* HLPRegistrationViewController.m */,
 			);
 			path = HELP;
 			sourceTree = "<group>";
@@ -342,6 +352,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				86A759E31927B2EB00E24B46 /* HLPServerManipulator.m in Sources */,
+				86A759E91927D0A500E24B46 /* HLPSmsViewController.m in Sources */,
+				86A759E61927BF5400E24B46 /* HLPRegistrationViewController.m in Sources */,
 				6572E0FD19275920009EEC0D /* main.m in Sources */,
 				6572E10719275920009EEC0D /* HLPViewController.m in Sources */,
 				65EBCEC119276C40000B7FE8 /* HLPFirstScreenViewController.m in Sources */,

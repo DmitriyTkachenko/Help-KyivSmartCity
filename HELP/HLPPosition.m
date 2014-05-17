@@ -109,7 +109,4 @@ static HLPPosition *hLPPosition = nil;
     // Should never be called, but just here for clarity really.
 }
 
--
-
 @end
-
