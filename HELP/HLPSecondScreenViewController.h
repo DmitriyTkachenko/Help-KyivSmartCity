@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleMaps/GoogleMaps.h>
+#import "HLPPosition.h"
 
 @interface HLPSecondScreenViewController : UIViewController
 

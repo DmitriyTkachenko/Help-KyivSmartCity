@@ -9,6 +9,7 @@
 #import "HLPSecondScreenViewController.h"
 
 @interface HLPSecondScreenViewController ()
+@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 
 @end
 
@@ -27,6 +28,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[HLPPosition sharedHLPPositionManager] longitude:<#(CLLocationDegrees)#> zoom:<#(float)#>];
+    mapView = [GMSMapView mapWithFrame:mapView.frame camera:<#(GMSCameraPosition *)#>];
+]
 }
 
 - (void)didReceiveMemoryWarning

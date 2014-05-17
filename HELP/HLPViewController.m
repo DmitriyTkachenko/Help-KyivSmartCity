@@ -7,6 +7,7 @@
 //
 
 #import "HLPViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface HLPViewController ()
 
@@ -18,6 +19,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    //GMSMarker *marker = [[GMSMarker alloc] init];
+    
 }
 
 - (void)didReceiveMemoryWarning
