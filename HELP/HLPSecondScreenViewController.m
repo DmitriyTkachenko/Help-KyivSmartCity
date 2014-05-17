@@ -34,7 +34,8 @@
     [[HLPPosition sharedHLPPositionManager] findCurrentLocation];
     CLLocationDegrees latitude = [[HLPPosition sharedHLPPositionManager] coordinates].latitude;
     CLLocationDegrees longitude = [[HLPPosition sharedHLPPositionManager] coordinates].longitude;
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitude                                                            longitude:longitude
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitude
+                                                            longitude:longitude
                                                                  zoom:6];
     
     GMSMapView * mapView_ = [GMSMapView mapWithFrame:_mapView.frame camera:camera];
