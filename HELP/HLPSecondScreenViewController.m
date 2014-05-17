@@ -32,9 +32,11 @@
     // Do any additional setup after loading the view.
     
     [[HLPPosition sharedHLPPositionManager] findCurrentLocation];
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[[HLPPosition sharedHLPPositionManager] coordinates].latitude longitude:[[HLPPosition sharedHLPPositionManager] coordinates].longitude zoom:6];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[[HLPPosition sharedHLPPositionManager] coordinates].latitude
+                                                            longitude:[[HLPPosition sharedHLPPositionManager] coordinates].longitude
+                                                                 zoom:6];
     
-    GMSMapView * mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    GMSMapView * mapView_ = [GMSMapView mapWithFrame:_mapView.frame camera:camera];
     
     self.mapView = mapView_;
     
