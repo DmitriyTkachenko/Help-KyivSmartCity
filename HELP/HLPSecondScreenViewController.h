@@ -10,6 +10,6 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "HLPPosition.h"
 
-@interface HLPSecondScreenViewController : UIViewController <GMSMapViewDelegate>
+@interface HLPSecondScreenViewController : UIViewController 
 
 @end
