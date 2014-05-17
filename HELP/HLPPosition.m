@@ -61,6 +61,20 @@ static HLPPosition *hLPPosition = nil;
     CLLocationCoordinate2D coordinate = [_currentLocation coordinate];
     NSString *str=[[NSString alloc] initWithFormat:@" latitude:%f longitude:%f",coordinate.latitude,coordinate.longitude];
     NSLog(@"%@",str);
+    [self requestAddress];
+    
+}
+
+- (void)requestAddress
+{
+    GMSGeocoder *geocoder = [GMSGeocoder geocoder];
+    [geocoder reverseGeocodeCoordinate:self.coordinates
+                     completionHandler:^(GMSReverseGeocodeResponse *response, NSError *error) {
+                         if (response.firstResult) {
+                             
+                         }
+                     }];
+    NSLog(self.address);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
