@@ -12,4 +12,8 @@
 @interface HLPPosition : NSObject <CLLocationManagerDelegate>
 @property (nonatomic, strong) NSString * address;
 @property (nonatomic) CLLocationCoordinate2D coordinates;
+
+-(void)update;
+
++ (instancetype)sharedHLPPositionManager;
 @end

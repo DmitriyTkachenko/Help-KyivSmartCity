@@ -8,11 +8,19 @@
 
 #import "HLPPosition.h"
 
+@interface HLPPosition ()
+{
+    CLLocationManager *locationManager;
+    CLLocation *currentLocation;
+}
+@end
+
 @implementation HLPPosition
 
 static HLPPosition *hLPPosition = nil;
 
-+ (id)sharedHLPPositionManager {
++ (instancetype)sharedHLPPositionManager
+{
     static HLPPosition *sharedHLPPosition = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -26,6 +34,43 @@ static HLPPosition *hLPPosition = nil;
 
     }
     return self;
+}
+
+-(void)findCurrentLocation
+{
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    if ([locationManager locationServicesEnabled])
+    {
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        locationManager.distanceFilter = kCLDistanceFilterNone;
+        [locationManager startUpdatingLocation];
+    }
+    
+    
+    CLLocation *location = [locationManager location];
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    
+    NSString *str=[[NSString alloc] initWithFormat:@" latitude:%f longitude:%f",coordinate.latitude,coordinate.longitude];
+    NSLog(@"%@",str);
+    
+    
+}
+
+-(void) update
+{
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    
+    currentLocation = newLocation;
+//    currentLat =  newLocation.coordinate.latitude;
+//    currentLong =  newLocation.coordinate.longitude;
 }
 
 - (void)dealloc {
