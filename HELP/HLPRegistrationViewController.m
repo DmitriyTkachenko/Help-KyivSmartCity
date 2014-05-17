@@ -34,6 +34,9 @@
     {
         mutableData = [[NSMutableData alloc] init];
     }
+    
+//    [self performSegueWithIdentifier:@"sms" sender:nil];
+    #warning 111
 }
 
 -(void)saveUserWithName:(NSString *)name andPhone:(NSString *)phone

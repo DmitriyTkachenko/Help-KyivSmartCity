@@ -39,6 +39,9 @@
     {
         mutableData = [[NSMutableData alloc] init];
     }
+    
+//    [self performSegueWithIdentifier:@"normal" sender:nil];
+    #warning 111
 }
 
 #pragma mark -
@@ -85,7 +88,9 @@
     
     if([dictionary[@"status"] isEqualToString:@"success activation!"]) {
         [[NSUserDefaults standardUserDefaults] setObject:dictionary[@"token"] forKey:@"token"];
-        [self.navigationController popToRootViewControllerAnimated:YES];
+//        [self.parentViewController.parentViewController.navigationController popToRootViewControllerAnimated:YES];
+        [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"TurnRegistrationOff" object:nil]];
+//        [self.navigationController performSegueWithIdentifier:@"normal" sender:nil];
     }
 //    if([dictionary[@"status"] isEqualToString:@"waiting for sms"])
 //    {

@@ -23,22 +23,38 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    if ( [[NSUserDefaults standardUserDefaults] objectForKey:@"token"] == nil ) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(turnOffModal:) name:@"TurnRegistrationOff" object:nil];
+        [self performSegueWithIdentifier:@"registration" sender:nil];
+    }
+}
+
+-(void)turnOffModal:(NSNotification *)notification
+{
+    NSLog(@"TurnRegistrationOff");
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+//    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    
+    
+#warning notif off
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    HLPThirdScreenViewController *tsvc = [[HLPThirdScreenViewController alloc] init];
-    [self.navigationController pushViewController:tsvc animated:YES];
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    HLPThirdScreenViewController *tsvc = [[HLPThirdScreenViewController alloc] init];
+//    [self.navigationController pushViewController:tsvc animated:YES];
+//}
 /*
 #pragma mark - Navigation
 
