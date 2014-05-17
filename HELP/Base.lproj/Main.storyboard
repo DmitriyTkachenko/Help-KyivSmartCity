@@ -31,11 +31,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKu-5O-oEU">
-                                <rect key="frame" x="104" y="291" width="115" height="30"/>
+                                <rect key="frame" x="104" y="290" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Первая помощь">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="callTouched:" destination="kV8-F7-sN7" eventType="touchUpInside" id="PEE-2P-6ab"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wd2-B4-QCI">
                                 <rect key="frame" x="10" y="518" width="275" height="30"/>
@@ -60,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Av-5z-Yyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-70" y="128"/>
+            <point key="canvasLocation" x="-58" y="452"/>
         </scene>
         <!--First Screen View Controller - FirstScreenController-->
         <scene sceneID="ufC-wZ-h7g">
@@ -101,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-613" y="240"/>
+            <point key="canvasLocation" x="-613" y="452"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SdH-hw-AUV">
@@ -172,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4F8-ia-qYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-637" y="1024"/>
+            <point key="canvasLocation" x="451" y="1189"/>
         </scene>
         <!--Sms View Controller-->
         <scene sceneID="Auw-fU-1ju">
@@ -212,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6f-hi-ozn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-182" y="1024"/>
+            <point key="canvasLocation" x="906" y="1189"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Cl-5H-lhm">
@@ -227,7 +230,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3n-ge-ay2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1194" y="1225"/>
+            <point key="canvasLocation" x="-70" y="1189"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

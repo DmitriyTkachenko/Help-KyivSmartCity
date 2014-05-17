@@ -34,9 +34,6 @@
     {
         mutableData = [[NSMutableData alloc] init];
     }
-    
-//    [self performSegueWithIdentifier:@"sms" sender:nil];
-    #warning 111
 }
 
 -(void)saveUserWithName:(NSString *)name andPhone:(NSString *)phone
@@ -100,17 +97,17 @@
     // You can do your functions here. If your repines is in XML you have to parse the response using NSXMLParser. If your response in JSON you have use SBJSON.
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"sms"])
-    {
-//        TranslationQuizAssociateVC *translationQuizAssociateVC = [segue destinationViewController];
-//        translationQuizAssociateVC.nodeID = self.nodeID; //--pass nodeID from ViewNodeViewController
-//        translationQuizAssociateVC.contentID = self.contentID;
-//        translationQuizAssociateVC.index = self.index;
-//        translationQuizAssociateVC.content = self.content;
-    }
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([[segue identifier] isEqualToString:@"sms"])
+//    {
+////        TranslationQuizAssociateVC *translationQuizAssociateVC = [segue destinationViewController];
+////        translationQuizAssociateVC.nodeID = self.nodeID; //--pass nodeID from ViewNodeViewController
+////        translationQuizAssociateVC.contentID = self.contentID;
+////        translationQuizAssociateVC.index = self.index;
+////        translationQuizAssociateVC.content = self.content;
+//    }
+//}
 
 - (NSString *)urlEncodeValue:(NSString *)str
 {

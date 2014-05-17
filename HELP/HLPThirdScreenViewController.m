@@ -9,12 +9,87 @@
 #import "HLPThirdScreenViewController.h"
 
 @interface HLPThirdScreenViewController () <MKMapViewDelegate>
+{
+    NSMutableData * mutableData;
+}
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton *addressButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+
 @end
 
 @implementation HLPThirdScreenViewController
+
+- (IBAction)callTouched:(id)sender
+{
+    NSString * token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    NSString * lat = [NSString stringWithFormat:@"%f", [HLPPosition sharedHLPPositionManager].coordinates.latitude];
+    NSString * lon = [NSString stringWithFormat:@"%f", [HLPPosition sharedHLPPositionManager].coordinates.longitude];
+    
+    NSString *post = [NSString stringWithFormat:@"token=%@&longitude=%@&latitude=%@", [self urlEncodeValue: token], [self urlEncodeValue: lon], [self urlEncodeValue: lat] ];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:@"http://tilastserver.pp.ua:3000/api/getAmbulance"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if( connection )
+    {
+        mutableData = [[NSMutableData alloc] init];
+    }
+}
+
+#pragma mark -
+#pragma mark NSURLConnection delegates
+
+-(void) connection:(NSURLConnection *) connection didReceiveResponse:(NSURLResponse *)response
+{
+    [mutableData setLength:0];
+}
+
+-(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [mutableData appendData:data];
+}
+
+-(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    //    [mutableData release];
+    //    [connection release];
+    
+    // If we get any connection error we can manage it here…
+    //    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@”Alert” message:@”No Network Connection” delegate:self cancelButtonTitle:nil otherButtonTitles:@”OK”,nil];
+    //    [alertView show];
+    //    [alertView release];
+    
+    //    return;
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSError * error;
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:mutableData options:kNilOptions error:&error];
+    
+    if(error)
+    {
+        NSLog(@"fuckup %@", [error localizedDescription]);
+    }
+    
+    NSLog(@"Response : %@", dictionary);
+    
+    if ([dictionary[@"status"] isEqualToString:@"we have got your ticket"])
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Скорая помощь едет" message:@"Ваш запрос обработан и скорая помощь выехала. Спасибо, что спасаете жизни!" delegate:self cancelButtonTitle:@"ОК" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
@@ -32,7 +107,15 @@
                                             name:@"Geocoding Done"
                                             object:nil];
 }
-- (IBAction)cancellCall:(id)sender {
+
+- (NSString *)urlEncodeValue:(NSString *)str
+{
+    NSString *result = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)str, NULL, CFSTR("?=&+"), kCFStringEncodingUTF8));
+    return result;
+}
+
+- (IBAction)cancellCall:(id)sender
+{
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
@@ -68,15 +151,5 @@
 {
     [self.navigationItem setHidesBackButton:YES];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
