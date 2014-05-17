@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652EED08192778F70089DF54 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED07192778F70089DF54 /* libc++.dylib */; };
+		652EED0A19277B360089DF54 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED0919277B360089DF54 /* libstdc++.dylib */; };
+		652EED0C19277C250089DF54 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED0B19277C250089DF54 /* AVFoundation.framework */; };
+		652EED0E19277C2B0089DF54 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED0D19277C2A0089DF54 /* CoreData.framework */; };
+		652EED1019277C370089DF54 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED0F19277C370089DF54 /* CoreText.framework */; };
+		652EED1219277C450089DF54 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED1119277C450089DF54 /* GLKit.framework */; };
+		652EED1419277C490089DF54 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED1319277C490089DF54 /* ImageIO.framework */; };
+		652EED1619277C520089DF54 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED1519277C520089DF54 /* libicucore.dylib */; };
+		652EED1819277C5A0089DF54 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED1719277C5A0089DF54 /* libz.dylib */; };
+		652EED1A19277C6E0089DF54 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED1919277C6E0089DF54 /* OpenGLES.framework */; };
+		652EED1C19277C760089DF54 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED1B19277C760089DF54 /* QuartzCore.framework */; };
+		652EED1E19277C800089DF54 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED1D19277C800089DF54 /* SystemConfiguration.framework */; };
 		6572E0F119275920009EEC0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6572E0F019275920009EEC0D /* Foundation.framework */; };
 		6572E0F319275920009EEC0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6572E0F219275920009EEC0D /* CoreGraphics.framework */; };
 		6572E0F519275920009EEC0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6572E0F419275920009EEC0D /* UIKit.framework */; };
@@ -39,6 +51,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		652EED07192778F70089DF54 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		652EED0919277B360089DF54 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		652EED0B19277C250089DF54 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		652EED0D19277C2A0089DF54 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		652EED0F19277C370089DF54 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		652EED1119277C450089DF54 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		652EED1319277C490089DF54 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		652EED1519277C520089DF54 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		652EED1719277C5A0089DF54 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		652EED1919277C6E0089DF54 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		652EED1B19277C760089DF54 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		652EED1D19277C800089DF54 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6572E0ED19275920009EEC0D /* HELP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HELP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6572E0F019275920009EEC0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6572E0F219275920009EEC0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -73,6 +97,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				652EED1E19277C800089DF54 /* SystemConfiguration.framework in Frameworks */,
+				652EED1C19277C760089DF54 /* QuartzCore.framework in Frameworks */,
+				652EED1A19277C6E0089DF54 /* OpenGLES.framework in Frameworks */,
+				652EED1819277C5A0089DF54 /* libz.dylib in Frameworks */,
+				652EED1619277C520089DF54 /* libicucore.dylib in Frameworks */,
+				652EED1419277C490089DF54 /* ImageIO.framework in Frameworks */,
+				652EED1219277C450089DF54 /* GLKit.framework in Frameworks */,
+				652EED1019277C370089DF54 /* CoreText.framework in Frameworks */,
+				652EED0E19277C2B0089DF54 /* CoreData.framework in Frameworks */,
+				652EED0C19277C250089DF54 /* AVFoundation.framework in Frameworks */,
+				652EED0A19277B360089DF54 /* libstdc++.dylib in Frameworks */,
+				652EED08192778F70089DF54 /* libc++.dylib in Frameworks */,
 				6572E12E192762C0009EEC0D /* CoreLocation.framework in Frameworks */,
 				6572E0F319275920009EEC0D /* CoreGraphics.framework in Frameworks */,
 				6572E0F519275920009EEC0D /* UIKit.framework in Frameworks */,
@@ -116,6 +152,18 @@
 		6572E0EF19275920009EEC0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				652EED1D19277C800089DF54 /* SystemConfiguration.framework */,
+				652EED1B19277C760089DF54 /* QuartzCore.framework */,
+				652EED1919277C6E0089DF54 /* OpenGLES.framework */,
+				652EED1719277C5A0089DF54 /* libz.dylib */,
+				652EED1519277C520089DF54 /* libicucore.dylib */,
+				652EED1319277C490089DF54 /* ImageIO.framework */,
+				652EED1119277C450089DF54 /* GLKit.framework */,
+				652EED0F19277C370089DF54 /* CoreText.framework */,
+				652EED0D19277C2A0089DF54 /* CoreData.framework */,
+				652EED0B19277C250089DF54 /* AVFoundation.framework */,
+				652EED0919277B360089DF54 /* libstdc++.dylib */,
+				652EED07192778F70089DF54 /* libc++.dylib */,
 				6572E12D192762C0009EEC0D /* CoreLocation.framework */,
 				6572E12519275E85009EEC0D /* GoogleMaps.framework */,
 				6572E0F019275920009EEC0D /* Foundation.framework */,
@@ -411,6 +459,7 @@
 				GCC_PREFIX_HEADER = "HELP/HELP-Prefix.pch";
 				INFOPLIST_FILE = "HELP/HELP-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -428,6 +477,7 @@
 				GCC_PREFIX_HEADER = "HELP/HELP-Prefix.pch";
 				INFOPLIST_FILE = "HELP/HELP-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

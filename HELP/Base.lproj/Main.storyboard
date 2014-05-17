@@ -89,7 +89,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="clE-bW-mQ4"/>
                     <connections>
-                        <outlet property="mapView" destination="Zi0-54-JWS" id="baD-Ot-QXw"/>
+                        <outlet property="addressButton" destination="wd2-B4-QCI" id="Pvj-bq-7Q0"/>
+                        <outlet property="mapView" destination="Zi0-54-JWS" id="Qxe-Ep-0CC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qz-vA-rlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
