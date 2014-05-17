@@ -9,10 +9,10 @@
 #import "HLPPosition.h"
 
 @interface HLPPosition ()
-{
-    CLLocationManager *locationManager;
-    CLLocation *currentLocation;
-}
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLLocation *currentLocation;
+
 @end
 
 @implementation HLPPosition
@@ -38,37 +38,31 @@ static HLPPosition *hLPPosition = nil;
 
 -(void)findCurrentLocation
 {
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    if ([locationManager locationServicesEnabled])
+    self.locationManager = [[CLLocationManager alloc] init];
+    if ( [CLLocationManager locationServicesEnabled])
     {
-        locationManager.delegate = self;
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        locationManager.distanceFilter = kCLDistanceFilterNone;
-        [locationManager startUpdatingLocation];
+        _locationManager.delegate = self;
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        _locationManager.distanceFilter = kCLDistanceFilterNone;
+        [_locationManager startUpdatingLocation];
     }
     
+    self.currentLocation = [_locationManager location];
     
-    CLLocation *location = [locationManager location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    
+    CLLocationCoordinate2D coordinate = [_currentLocation coordinate];
     NSString *str=[[NSString alloc] initWithFormat:@" latitude:%f longitude:%f",coordinate.latitude,coordinate.longitude];
     NSLog(@"%@",str);
     
     
 }
 
--(void) update
-{
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [locationManager startUpdatingLocation];
-}
-
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
+    self.currentLocation = newLocation;
     
-    currentLocation = newLocation;
+    CLLocationCoordinate2D coordinate = [_currentLocation coordinate];
+    NSString *str=[[NSString alloc] initWithFormat:@" latitude:%f longitude:%f",coordinate.latitude,coordinate.longitude];
+    NSLog(@"%@",str);
 //    currentLat =  newLocation.coordinate.latitude;
 //    currentLong =  newLocation.coordinate.longitude;
 }
