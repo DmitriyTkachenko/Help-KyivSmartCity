@@ -14,7 +14,10 @@
 @property (nonatomic, strong) NSString * address;
 @property (nonatomic) CLLocationCoordinate2D coordinates;
 
+
 -(void)findCurrentLocation;
+
+-(void)registerView:(UIViewController *)viewC;
 
 + (instancetype)sharedHLPPositionManager;
 

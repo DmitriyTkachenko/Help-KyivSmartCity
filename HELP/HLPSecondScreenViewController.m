@@ -49,12 +49,19 @@
     marker.snippet = @"Вы здесь";
     marker.map = self.mapView;
     [self.view addSubview:mapView_];
+    
+    [[HLPPosition sharedHLPPositionManager] registerView:self];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) didUpdateToLocation:(CLLocation *)newLocation
+{
+    [_mapView animateToLocation:CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.latitude)];
 }
 
 /*

@@ -10,6 +10,8 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "HLPPosition.h"
 
-@interface HLPSecondScreenViewController : UIViewController 
+@interface HLPSecondScreenViewController : UIViewController
+
+-(void) didUpdateToLocation:(CLLocation *)newLocation;
 
 @end

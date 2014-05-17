@@ -8,16 +8,25 @@
 
 #import "HLPPosition.h"
 
+#import "HLPSecondScreenViewController.h"
+
 @interface HLPPosition ()
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CLLocation *currentLocation;
+
+@property (nonatomic, weak) HLPSecondScreenViewController * myController;
 
 @end
 
 @implementation HLPPosition
 
 static HLPPosition *hLPPosition = nil;
+
+-(void)registerView:(UIViewController *)viewC
+{
+    self.myController = (HLPSecondScreenViewController *) viewC;
+}
 
 + (instancetype)sharedHLPPositionManager
 {
@@ -52,8 +61,6 @@ static HLPPosition *hLPPosition = nil;
     CLLocationCoordinate2D coordinate = [_currentLocation coordinate];
     NSString *str=[[NSString alloc] initWithFormat:@" latitude:%f longitude:%f",coordinate.latitude,coordinate.longitude];
     NSLog(@"%@",str);
-    
-    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
@@ -63,6 +70,10 @@ static HLPPosition *hLPPosition = nil;
     CLLocationCoordinate2D coordinate = [_currentLocation coordinate];
     NSString *str=[[NSString alloc] initWithFormat:@" latitude:%f longitude:%f",coordinate.latitude,coordinate.longitude];
     NSLog(@"%@",str);
+    
+    if(self.myController) {
+        [self.myController didUpdateToLocation:newLocation];
+    }
 //    currentLat =  newLocation.coordinate.latitude;
 //    currentLong =  newLocation.coordinate.longitude;
 }
