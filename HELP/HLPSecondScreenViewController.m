@@ -28,8 +28,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[HLPPosition sharedHLPPositionManager] longitude:<#(CLLocationDegrees)#> zoom:<#(float)#>];
-    mapView = [GMSMapView mapWithFrame:mapView.frame camera:<#(GMSCameraPosition *)#>];
+GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[HLPPosition sharedHLPPositionManager] longitude:<#(CLLocationDegrees)#> zoom:<#(float)#>];
+    _mapView = [GMSMapView mapWithFrame:_mapView.frame camera:camera];
 ]
 }
 
