@@ -32,18 +32,22 @@
     // Do any additional setup after loading the view.
     
     [[HLPPosition sharedHLPPositionManager] findCurrentLocation];
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[[HLPPosition sharedHLPPositionManager] coordinates].latitude
-                                                            longitude:[[HLPPosition sharedHLPPositionManager] coordinates].longitude
+    CLLocationDegrees latitude = [[HLPPosition sharedHLPPositionManager] coordinates].latitude;
+    CLLocationDegrees longitude = [[HLPPosition sharedHLPPositionManager] coordinates].longitude;
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitude                                                            longitude:longitude
                                                                  zoom:6];
     
     GMSMapView * mapView_ = [GMSMapView mapWithFrame:_mapView.frame camera:camera];
     
     self.mapView = mapView_;
     
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = camera.target;
+    //GMSMarker *marker = [[GMSMarker alloc] init];
+    GMSMarker *marker = [GMSMarker markerWithPosition:camera.target];
+    //marker.position = camera.target;
+    marker.appearAnimation = YES;
     marker.snippet = @"Вы здесь";
     marker.map = self.mapView;
+    [self.view addSubview:mapView_];
 }
 
 - (void)didReceiveMemoryWarning
