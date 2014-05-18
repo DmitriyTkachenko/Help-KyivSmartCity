@@ -11,6 +11,11 @@
 #import "HLPFirstAidViewController.h"
 
 @interface HLPReasonsViewController ()
+{
+    NSMutableData * mutableData;
+}
+
+@property (nonatomic, strong) NSMutableArray * symptomes;
 
 @end
 
@@ -37,14 +42,56 @@
     
     UIBarButtonItem *barDoneButton = [[UIBarButtonItem alloc] initWithTitle:@"Дальше" style:UIBarButtonItemStylePlain target:self action:@selector(nextTouched:)];
     
-    [self.navigationController.navigationItem setRightBarButtonItem:barDoneButton];
+    [self.navigationItem setRightBarButtonItem:barDoneButton];
+    
+    self.symptomes = [NSMutableArray arrayWithObjects: @"First",@"FSecond",@"Third",@"Fourth", nil];
     
     
 }
 
 - (IBAction)nextTouched:(id)sender
 {
+//    [self sendSymtomes];
+    [self performSegueWithIdentifier:@"firstAid" sender:nil];
+}
+
+-(void)sendSymtomes
+{
+    NSString * token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     
+//    NSMutableArray * syms = [NSMutableArray array];
+    
+    NSString * sentStr = @"";
+    for(NSIndexPath * path in self.tableView.indexPathsForSelectedRows)
+    {
+        NSString * str = [NSString stringWithFormat:@"%@", self.symptomes[path.row] ];
+//        [syms addObject:str];
+        sentStr = [sentStr stringByAppendingString:[NSString stringWithFormat:@"%@", str]];
+    }
+    
+    NSString *post = [NSString stringWithFormat:@"token=%@&symptomes=%@", [self urlEncodeValue: token], [self urlEncodeValue: sentStr] ];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:@"http://tilastserver.pp.ua:3000/api/additionalInfo"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if( connection )
+    {
+        mutableData = [[NSMutableData alloc] init];
+    }
+}
+
+- (NSString *)urlEncodeValue:(NSString *)str
+{
+    NSString *result = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)str, NULL, CFSTR("?=&+"), kCFStringEncodingUTF8));
+    return result;
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,28 +104,41 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.symptomes count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"symptomeCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"symptomeCell"];
+    }
+    
+    cell.textLabel.text = self.symptomes[indexPath.row];
     
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@" sel:%@", tableView.indexPathsForSelectedRows);
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    NSLog(@" desel:%d", indexPath.row);
+}
 
 /*
 // Override to support conditional editing of the table view.
