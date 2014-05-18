@@ -90,17 +90,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="8O5-NZ-mZ1"/>
                     <connections>
-                        <segue destination="tNm-Ci-kG8" kind="push" id="5mH-90-5pg"/>
+                        <segue destination="tNm-Ci-kG8" kind="push" identifier="firstAid" id="5mH-90-5pg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9li-Da-KJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="446" y="452"/>
         </scene>
-        <!--Page View Controller-->
+        <!--First Aid View Controller-->
         <scene sceneID="4Ou-kK-fQh">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="tNm-Ci-kG8" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="tNm-Ci-kG8" customClass="HLPFirstAidViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="8SK-XR-u1F"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eM-0y-GCE" userLabel="First Responder" sceneMemberID="firstResponder"/>

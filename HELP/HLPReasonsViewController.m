@@ -8,6 +8,8 @@
 
 #import "HLPReasonsViewController.h"
 
+#import "HLPFirstAidViewController.h"
+
 @interface HLPReasonsViewController ()
 
 @end
@@ -105,15 +107,21 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"firstAid"])
+    {
+        // Get reference to the destination view controller
+        HLPFirstAidViewController *vc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+        vc.simptomes = @[@"Over Fuck", @"Programmer", @"Koala"];
+    }
 }
-*/
+
 
 @end

@@ -10,4 +10,6 @@
 
 @interface HLPFirstAidViewController : UIPageViewController
 
+@property (nonatomic, strong) NSArray *simptomes;
+
 @end
