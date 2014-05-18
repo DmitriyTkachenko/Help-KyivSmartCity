@@ -51,6 +51,8 @@
     {
         mutableData = [[NSMutableData alloc] init];
         wasSent = YES;
+        
+        [self setSecondsRemaining:0];
     }
 
 }
