@@ -11,6 +11,7 @@
 @interface HLPSecondScreenViewController () <MKMapViewDelegate>
 {
     NSMutableData * mutableData;
+    BOOL alertWasShown;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -84,10 +85,11 @@
     
     NSLog(@"Response : %@", dictionary);
     
-    if ([dictionary[@"status"] isEqualToString:@"we have got your ticket"])
+    if ([dictionary[@"status"] isEqualToString:@"we have got your ticket"] && !alertWasShown)
     {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Скорая помощь едет" message:@"Ваш запрос обработан и скорая помощь выехала. Спасибо, что спасаете жизни!" delegate:self cancelButtonTitle:@"ОК" otherButtonTitles:nil, nil];
         [alert show];
+        alertWasShown = YES;
     }
 }
 
@@ -145,6 +147,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _mapView.delegate = self;
+    alertWasShown = NO;
 }
 
 - (void)didReceiveMemoryWarning
