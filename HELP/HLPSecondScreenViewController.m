@@ -165,8 +165,9 @@
     
     [self setSecondsRemaining:30];
     [self countdownTimer];
-    if ([self])
-    [self.spinner startAnimating];
+    if ([[self.addressButton titleForState:UIControlStateNormal] isEqualToString:@"Определение адреса..."]) {
+        [self.spinner startAnimating];
+    }
 }
 
 - (void)didReceiveMemoryWarning
