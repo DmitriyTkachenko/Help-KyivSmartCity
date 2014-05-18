@@ -33,7 +33,18 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+//    self.navigationItem.rightBarButtonItem = self.n;
+    
+    UIBarButtonItem *barDoneButton = [[UIBarButtonItem alloc] initWithTitle:@"Дальше" style:UIBarButtonItemStylePlain target:self action:@selector(nextTouched:)];
+    
+    [self.navigationController.navigationItem setRightBarButtonItem:barDoneButton];
+    
+    
+}
+
+- (IBAction)nextTouched:(id)sender
+{
+    
 }
 
 - (void)didReceiveMemoryWarning
