@@ -14,14 +14,21 @@
 {
     NSMutableData * mutableData;
     BOOL alertWasShown;
+<<<<<<< HEAD
     BOOL wasSent;
     
     NSString * ticketID;
+=======
+    NSTimer * countdownTimer;
+    int secondsRemaining;
+>>>>>>> FETCH_HEAD
 }
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UIButton *addressButton;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet MKMapView * mapView;
+@property (weak, nonatomic) IBOutlet UIButton * addressButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView * spinner;
+@property (weak, nonatomic) IBOutlet UILabel * countdown;
+@property (weak, nonatomic) IBOutlet UITextView *callProcessedText;
 
 @end
 
@@ -49,7 +56,7 @@
     [request setHTTPBody:postData];
     
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    if( connection )
+    if ( connection )
     {
         mutableData = [[NSMutableData alloc] init];
         wasSent = YES;
@@ -101,7 +108,7 @@
         alertWasShown = YES;
         ticketID = dictionary[@"ticketID"];
     }
-}
+} 
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
@@ -159,6 +166,9 @@
     _mapView.delegate = self;
     alertWasShown = NO;
     wasSent = NO;
+    
+    [self setSecondsRemaining:10];
+    [self countdownTimer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -182,6 +192,7 @@
     [self.navigationItem setHidesBackButton:YES];
 }
 
+<<<<<<< HEAD
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"firstAid"])
@@ -193,6 +204,28 @@
         NSLog(@"ticket:%@", ticketID);
         [vc setTiketID:ticketID];
     }
+=======
+- (void)updateCounter:(NSTimer *)theTimer {
+    if(secondsRemaining > 0 ){
+        secondsRemaining -- ;
+        int minutes = (secondsRemaining % 3600) / 60;
+        int seconds = (secondsRemaining % 3600) % 60;
+        self.countdown.text = [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+    }
+    else {
+        self.countdown.text = [NSString stringWithFormat:@"%02d:%02d", 0, 0];
+    }
+}
+
+- (void)countdownTimer {
+    countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateCounter:) userInfo:nil repeats:YES];
+}
+
+- (void)setSecondsRemaining:(int)seconds {
+    secondsRemaining = seconds;
+    self.callProcessedText.text = [NSString stringWithFormat:@"Машина отправлена. Ориентировочное время прибытия:"];
+    self.callProcessedText.textAlignment = NSTextAlignmentCenter;
+>>>>>>> FETCH_HEAD
 }
 
 @end

@@ -18,9 +18,15 @@
 {
     [super viewDidLoad];
 	// Create the data model
-    _pageTitles = @[@"Проверьте, в сознании ли ребёнок", @"Положите больного на спину", @"Освободите дыхательные пути", @"Попробуйте сделать вентиляцию"];
+    _pageTitles = @[@"Проверьте, в сознании ли ребёнок",
+                    @"Положите больного на спину",
+                    @"Освободите дыхательные пути",
+                    @"Попробуйте сделать вентиляцию"];
     _pageImages = @[@"step1.png", @"step2.png", @"step3.png", @"step4.png"];
-    _pageContents = @[@"Нежно нажмите и потрясите за плечи, чтобы определить, в сознании ли ребёнок.", @"Если больной лежит лицом в низ, положите его на спину. Делайте это поддерживая голову, шею и живот, не перекручивая.", @"Надавите на лоб и осторожно другой рукой поднимите подбородок. Проследите, как поднимается и опускается грудная клетка. Послушайте дыхание.", @"Поддерживая голову так, чтобы дыхательные пути были освобождены, зажмите нос большим и указательным пальцами. Сделайте два глубоких вдоха."];
+    _pageContents = @[@"Нежно нажмите и потрясите за плечи, чтобы определить, в сознании ли ребёнок.",
+                      @"Если больной лежит лицом в низ, положите его на спину. Делайте это поддерживая голову, шею и живот, не перекручивая.",
+                      @"Надавите на лоб и осторожно другой рукой поднимите подбородок. Проследите, как поднимается и опускается грудная клетка. Послушайте дыхание.",
+                      @"Поддерживая голову так, чтобы дыхательные пути были освобождены, зажмите нос большим и указательным пальцами. Сделайте два глубоких вдоха."];
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HLPFirstAidPageViewController"];
@@ -63,6 +69,9 @@
     hLPFirstAidPageContentViewController.titleText = self.pageTitles[index];
     hLPFirstAidPageContentViewController.contentTextString = self.pageContents[index];
     hLPFirstAidPageContentViewController.pageIndex = index;
+    
+    if (index == [self.pageTitles count] - 1)
+        [hLPFirstAidPageContentViewController.returnToInfoButton setHidden:YES];
     
     return hLPFirstAidPageContentViewController;
 }
