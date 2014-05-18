@@ -165,6 +165,8 @@
     
     [self setSecondsRemaining:30];
     [self countdownTimer];
+    if ([self])
+    [self.spinner startAnimating];
 }
 
 - (void)didReceiveMemoryWarning
@@ -175,7 +177,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.spinner startAnimating];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
