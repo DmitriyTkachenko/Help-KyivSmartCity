@@ -8,10 +8,15 @@
 
 #import "HLPSecondScreenViewController.h"
 
+#import "HLPReasonsViewController.h"
+
 @interface HLPSecondScreenViewController () <MKMapViewDelegate>
 {
     NSMutableData * mutableData;
     BOOL alertWasShown;
+    BOOL wasSent;
+    
+    NSString * ticketID;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -24,6 +29,9 @@
 
 - (void)sendCoordinateData
 {
+    if( wasSent)
+        return;
+    
     NSString * token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     NSString * lat = [NSString stringWithFormat:@"%f", [HLPPosition sharedHLPPositionManager].coordinates.latitude];
     NSString * lon = [NSString stringWithFormat:@"%f", [HLPPosition sharedHLPPositionManager].coordinates.longitude];
@@ -44,6 +52,7 @@
     if( connection )
     {
         mutableData = [[NSMutableData alloc] init];
+        wasSent = YES;
     }
 }
 
@@ -90,6 +99,7 @@
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Скорая помощь вызвана" message:@"Ваш запрос поступил диспетчеру. Спасибо, что спасаете жизни!" delegate:self cancelButtonTitle:@"ОК" otherButtonTitles:nil, nil];
         [alert show];
         alertWasShown = YES;
+        ticketID = dictionary[@"ticketID"];
     }
 }
 
@@ -148,6 +158,7 @@
     // Do any additional setup after loading the view.
     _mapView.delegate = self;
     alertWasShown = NO;
+    wasSent = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -169,6 +180,19 @@
 - (void)awakeFromNib
 {
     [self.navigationItem setHidesBackButton:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"firstAid"])
+    {
+        // Get reference to the destination view controller
+        HLPReasonsViewController *vc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+        NSLog(@"ticket:%@", ticketID);
+        [vc setTiketID:ticketID];
+    }
 }
 
 @end

@@ -10,4 +10,6 @@
 
 @interface HLPReasonsViewController : UITableViewController
 
+@property (nonatomic, strong) NSString * tiketID;
+
 @end

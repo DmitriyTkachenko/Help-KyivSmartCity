@@ -13,6 +13,8 @@
 @interface HLPReasonsViewController ()
 {
     NSMutableData * mutableData;
+    
+    NSMutableArray * syms;
 }
 
 @property (nonatomic, strong) NSMutableArray * symptomes;
@@ -51,7 +53,7 @@
 
 - (IBAction)nextTouched:(id)sender
 {
-//    [self sendSymtomes];
+    [self sendSymtomes];
     [self performSegueWithIdentifier:@"firstAid" sender:nil];
 }
 
@@ -59,17 +61,18 @@
 {
     NSString * token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     
-//    NSMutableArray * syms = [NSMutableArray array];
+    syms = [NSMutableArray array];
     
     NSString * sentStr = @"";
     for(NSIndexPath * path in self.tableView.indexPathsForSelectedRows)
     {
         NSString * str = [NSString stringWithFormat:@"%@", self.symptomes[path.row] ];
-//        [syms addObject:str];
-        sentStr = [sentStr stringByAppendingString:[NSString stringWithFormat:@"%@", str]];
+        [syms addObject:str];
+        sentStr = [sentStr stringByAppendingString:[NSString stringWithFormat:@"'%@', ", str]];
     }
+    sentStr = [NSString stringWithFormat:@"%@%@%@", @"[", sentStr, @"]"];
     
-    NSString *post = [NSString stringWithFormat:@"token=%@&symptomes=%@", [self urlEncodeValue: token], [self urlEncodeValue: sentStr] ];
+    NSString *post = [NSString stringWithFormat:@"token=%@&ticketId=%@&symptomes=%@", [self urlEncodeValue: token], [self urlEncodeValue: self.tiketID], [self urlEncodeValue: sentStr] ];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
@@ -87,6 +90,54 @@
         mutableData = [[NSMutableData alloc] init];
     }
 }
+
+#pragma mark -
+#pragma mark NSURLConnection delegates
+
+-(void) connection:(NSURLConnection *) connection didReceiveResponse:(NSURLResponse *)response
+{
+    [mutableData setLength:0];
+}
+
+-(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [mutableData appendData:data];
+}
+
+-(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    //    [mutableData release];
+    //    [connection release];
+    
+    // If we get any connection error we can manage it here…
+    //    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@”Alert” message:@”No Network Connection” delegate:self cancelButtonTitle:nil otherButtonTitles:@”OK”,nil];
+    //    [alertView show];
+    //    [alertView release];
+    
+    //    return;
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSError * error;
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:mutableData options:kNilOptions error:&error];
+    
+    if(error)
+    {
+        NSLog(@"fuckup %@", [error localizedDescription]);
+    }
+    
+    NSLog(@"Response : %@", dictionary);
+    
+//    if ([dictionary[@"status"] isEqualToString:@"we have got your ticket"] && !alertWasShown)
+//    {
+//        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Скорая помощь вызвана" message:@"Ваш запрос поступил диспетчеру. Спасибо, что спасаете жизни!" delegate:self cancelButtonTitle:@"ОК" otherButtonTitles:nil, nil];
+//        [alert show];
+//        alertWasShown = YES;
+//        ticketID = dictionary[@"ticketID"];
+//    }
+}
+
 
 - (NSString *)urlEncodeValue:(NSString *)str
 {
@@ -132,7 +183,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@" sel:%@", tableView.indexPathsForSelectedRows);
+//    NSLog(@" sel:%@", tableView.indexPathsForSelectedRows);
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -190,7 +241,8 @@
         HLPFirstAidViewController *vc = [segue destinationViewController];
         
         // Pass any objects to the view controller here, like...
-        vc.symptomes = @[@"Over Fuck", @"Programmer", @"Koala"];
+//        vc.symptomes = @[@"Over Fuck", @"Programmer", @"Koala"];
+        vc.symptomes = syms;
     }
 }
 
