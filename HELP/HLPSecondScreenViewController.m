@@ -14,14 +14,10 @@
 {
     NSMutableData * mutableData;
     BOOL alertWasShown;
-<<<<<<< HEAD
     BOOL wasSent;
-    
     NSString * ticketID;
-=======
     NSTimer * countdownTimer;
     int secondsRemaining;
->>>>>>> FETCH_HEAD
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView * mapView;
@@ -192,9 +188,9 @@
     [self.navigationItem setHidesBackButton:YES];
 }
 
-<<<<<<< HEAD
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSLog(@"");
     if ([[segue identifier] isEqualToString:@"firstAid"])
     {
         // Get reference to the destination view controller
@@ -204,7 +200,8 @@
         NSLog(@"ticket:%@", ticketID);
         [vc setTiketID:ticketID];
     }
-=======
+}
+
 - (void)updateCounter:(NSTimer *)theTimer {
     if(secondsRemaining > 0 ){
         secondsRemaining -- ;
@@ -225,7 +222,8 @@
     secondsRemaining = seconds;
     self.callProcessedText.text = [NSString stringWithFormat:@"Машина отправлена. Ориентировочное время прибытия:"];
     self.callProcessedText.textAlignment = NSTextAlignmentCenter;
->>>>>>> FETCH_HEAD
-}
 
+}
+    
 @end
+    
