@@ -21,6 +21,8 @@
 		652EED1E19277C800089DF54 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED1D19277C800089DF54 /* SystemConfiguration.framework */; };
 		652EED1F192781680089DF54 /* GoogleMaps.framework in Resources */ = {isa = PBXBuildFile; fileRef = 6572E12519275E85009EEC0D /* GoogleMaps.framework */; };
 		652EED21192782000089DF54 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 652EED20192782000089DF54 /* GoogleMaps.bundle */; };
+		65513D741928AAC500EAF604 /* HLPFirstAidPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65513D731928AAC500EAF604 /* HLPFirstAidPageViewController.m */; };
+		65513D771928AB1A00EAF604 /* HLPFirstAidPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65513D761928AB1A00EAF604 /* HLPFirstAidPageContentViewController.m */; };
 		6572E0F119275920009EEC0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6572E0F019275920009EEC0D /* Foundation.framework */; };
 		6572E0F319275920009EEC0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6572E0F219275920009EEC0D /* CoreGraphics.framework */; };
 		6572E0F519275920009EEC0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6572E0F419275920009EEC0D /* UIKit.framework */; };
@@ -73,6 +75,10 @@
 		652EED1B19277C760089DF54 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		652EED1D19277C800089DF54 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		652EED20192782000089DF54 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		65513D721928AAC500EAF604 /* HLPFirstAidPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPFirstAidPageViewController.h; sourceTree = "<group>"; };
+		65513D731928AAC500EAF604 /* HLPFirstAidPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPFirstAidPageViewController.m; sourceTree = "<group>"; };
+		65513D751928AB1A00EAF604 /* HLPFirstAidPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPFirstAidPageContentViewController.h; sourceTree = "<group>"; };
+		65513D761928AB1A00EAF604 /* HLPFirstAidPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPFirstAidPageContentViewController.m; sourceTree = "<group>"; };
 		6572E0ED19275920009EEC0D /* HELP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HELP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6572E0F019275920009EEC0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6572E0F219275920009EEC0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -210,6 +216,10 @@
 				6572E0FF19275920009EEC0D /* HLPAppDelegate.h */,
 				6572E10019275920009EEC0D /* HLPAppDelegate.m */,
 				6572E10219275920009EEC0D /* Main.storyboard */,
+				65513D751928AB1A00EAF604 /* HLPFirstAidPageContentViewController.h */,
+				65513D761928AB1A00EAF604 /* HLPFirstAidPageContentViewController.m */,
+				65513D721928AAC500EAF604 /* HLPFirstAidPageViewController.h */,
+				65513D731928AAC500EAF604 /* HLPFirstAidPageViewController.m */,
 				6588F4031927E8D500700E81 /* HLPDecisionController.h */,
 				6588F4041927E8D500700E81 /* HLPDecisionController.m */,
 				86A759E71927D0A500E24B46 /* HLPSmsViewController.h */,
@@ -361,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65513D741928AAC500EAF604 /* HLPFirstAidPageViewController.m in Sources */,
 				86A759E31927B2EB00E24B46 /* HLPServerManipulator.m in Sources */,
 				86A759E91927D0A500E24B46 /* HLPSmsViewController.m in Sources */,
 				86A759E61927BF5400E24B46 /* HLPRegistrationViewController.m in Sources */,
@@ -370,6 +381,7 @@
 				65EBCEC119276C40000B7FE8 /* HLPFirstScreenViewController.m in Sources */,
 				6588F3CA1927A9E700700E81 /* HLPThirdScreenViewController.m in Sources */,
 				6588F4051927E8D500700E81 /* HLPDecisionController.m in Sources */,
+				65513D771928AB1A00EAF604 /* HLPFirstAidPageContentViewController.m in Sources */,
 				6572E10119275920009EEC0D /* HLPAppDelegate.m in Sources */,
 				6572E12C19276290009EEC0D /* HLPPosition.m in Sources */,
 				86FFF5DE1928A5A2000777D1 /* HLPFirstAidViewController.m in Sources */,

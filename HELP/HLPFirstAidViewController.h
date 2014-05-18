@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HLPFirstAidViewController : UIPageViewController
+@interface HLPFirstAidViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *simptomes;
+@property (nonatomic, strong) NSArray *symptomes;
 
 @end
