@@ -54,7 +54,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="768-ru-BXB"/>
+                    <navigationItem key="navigationItem" title="Определяем местоположение" id="768-ru-BXB"/>
                     <connections>
                         <outlet property="addressButton" destination="wd2-B4-QCI" id="5do-zF-De9"/>
                         <outlet property="mapView" destination="ziz-rR-022" id="YlW-FZ-mcT"/>
@@ -65,7 +65,7 @@
             </objects>
             <point key="canvasLocation" x="-70" y="452"/>
         </scene>
-        <!--Reasons View Controller-->
+        <!--Reasons View Controller - Выберите симптомы-->
         <scene sceneID="i4F-kT-bAQ">
             <objects>
                 <tableViewController id="U3P-Pg-Hgz" customClass="HLPReasonsViewController" sceneMemberID="viewController">
@@ -88,7 +88,7 @@
                             <outlet property="delegate" destination="U3P-Pg-Hgz" id="ibB-ut-5Uc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="8O5-NZ-mZ1"/>
+                    <navigationItem key="navigationItem" title="Выберите симптомы" id="8O5-NZ-mZ1"/>
                     <connections>
                         <segue destination="tNm-Ci-kG8" kind="push" identifier="firstAid" id="5mH-90-5pg"/>
                     </connections>
