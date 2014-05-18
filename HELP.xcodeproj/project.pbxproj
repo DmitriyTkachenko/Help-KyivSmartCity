@@ -19,8 +19,6 @@
 		652EED1A19277C6E0089DF54 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED1919277C6E0089DF54 /* OpenGLES.framework */; };
 		652EED1C19277C760089DF54 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED1B19277C760089DF54 /* QuartzCore.framework */; };
 		652EED1E19277C800089DF54 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652EED1D19277C800089DF54 /* SystemConfiguration.framework */; };
-		652EED1F192781680089DF54 /* GoogleMaps.framework in Resources */ = {isa = PBXBuildFile; fileRef = 6572E12519275E85009EEC0D /* GoogleMaps.framework */; };
-		652EED21192782000089DF54 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 652EED20192782000089DF54 /* GoogleMaps.bundle */; };
 		65513D741928AAC500EAF604 /* HLPFirstAidPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65513D731928AAC500EAF604 /* HLPFirstAidPageViewController.m */; };
 		65513D771928AB1A00EAF604 /* HLPFirstAidPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65513D761928AB1A00EAF604 /* HLPFirstAidPageContentViewController.m */; };
 		65513D8A1928BAD800EAF604 /* step1.png in Resources */ = {isa = PBXBuildFile; fileRef = 65513D841928BAD800EAF604 /* step1.png */; };
@@ -41,7 +39,6 @@
 		6572E11219275920009EEC0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6572E0F419275920009EEC0D /* UIKit.framework */; };
 		6572E11A19275920009EEC0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6572E11819275920009EEC0D /* InfoPlist.strings */; };
 		6572E11C19275920009EEC0D /* HELPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6572E11B19275920009EEC0D /* HELPTests.m */; };
-		6572E12619275E85009EEC0D /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6572E12519275E85009EEC0D /* GoogleMaps.framework */; };
 		6572E12C19276290009EEC0D /* HLPPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6572E12B19276290009EEC0D /* HLPPosition.m */; };
 		6572E12E192762C0009EEC0D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6572E12D192762C0009EEC0D /* CoreLocation.framework */; };
 		6588F3CA1927A9E700700E81 /* HLPSecondScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588F3C91927A9E700700E81 /* HLPSecondScreenViewController.m */; };
@@ -158,7 +155,6 @@
 				6572E12E192762C0009EEC0D /* CoreLocation.framework in Frameworks */,
 				6572E0F319275920009EEC0D /* CoreGraphics.framework in Frameworks */,
 				6572E0F519275920009EEC0D /* UIKit.framework in Frameworks */,
-				6572E12619275E85009EEC0D /* GoogleMaps.framework in Frameworks */,
 				6572E0F119275920009EEC0D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,7 +398,6 @@
 				86FFF5E61928C542000777D1 /* step4.png in Resources */,
 				65513D8E1928BAD800EAF604 /* step4.png in Resources */,
 				86FFF5E31928C542000777D1 /* step1.png in Resources */,
-				652EED1F192781680089DF54 /* GoogleMaps.framework in Resources */,
 				65513D8D1928BAD800EAF604 /* step3.png in Resources */,
 				6572E10919275920009EEC0D /* Images.xcassets in Resources */,
 				65513D8B1928BAD800EAF604 /* step2.png in Resources */,
@@ -411,7 +406,6 @@
 				86FFF5E41928C542000777D1 /* step2.png in Resources */,
 				6572E0FB19275920009EEC0D /* InfoPlist.strings in Resources */,
 				6572E10419275920009EEC0D /* Main.storyboard in Resources */,
-				652EED21192782000089DF54 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,8 +562,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -591,8 +585,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
