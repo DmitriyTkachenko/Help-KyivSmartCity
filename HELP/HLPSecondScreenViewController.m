@@ -59,6 +59,32 @@
     }
 }
 
+-(void)timeRequest
+{
+    NSString * token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    NSString * lat = [NSString stringWithFormat:@"%f", [HLPPosition sharedHLPPositionManager].coordinates.latitude];
+    NSString * lon = [NSString stringWithFormat:@"%f", [HLPPosition sharedHLPPositionManager].coordinates.longitude];
+    
+    NSString *post = [NSString stringWithFormat:@"token=%@&ticketId=%@", [self urlEncodeValue: token],[self urlEncodeValue: ticketID] ];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:@"http://tilastserver.pp.ua:3000/api/supposedTime"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if ( connection )
+    {
+        mutableData = [[NSMutableData alloc] init];
+//        wasSent = YES;
+    }
+}
+
 #pragma mark -
 #pragma mark NSURLConnection delegates
 
@@ -103,6 +129,14 @@
         [alert show];
         alertWasShown = YES;
         ticketID = dictionary[@"ticketId"];
+    }
+    else if ([dictionary[@"status"] isEqualToString:@"time"])
+    {
+        NSString * timeStr = dictionary[@"supposedTime"];
+        if ( ! [timeStr isEqualToString:@"false"]) {
+            [self setSecondsRemaining:[timeStr intValue]];
+            [self countdownTimer];
+        }
     }
 } 
 
@@ -163,8 +197,8 @@
     alertWasShown = NO;
     wasSent = NO;
     
-    [self setSecondsRemaining:30];
-    [self countdownTimer];
+//    [self setSecondsRemaining:30];
+//    [self countdownTimer];
     if ([[self.addressButton titleForState:UIControlStateNormal] isEqualToString:@"Определение адреса..."]) {
         [self.spinner startAnimating];
     }
@@ -178,7 +212,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
+    if(wasSent) {
+        [self timeRequest];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
