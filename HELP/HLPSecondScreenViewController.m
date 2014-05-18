@@ -133,7 +133,7 @@
     else if ([dictionary[@"status"] isEqualToString:@"time"])
     {
         NSString * timeStr = dictionary[@"supposedTime"];
-        if ( ! [timeStr isEqualToString:@"false"]) {
+        if ( [timeStr intValue]) {
             [self setSecondsRemaining:[timeStr intValue]];
             [self countdownTimer];
         }
