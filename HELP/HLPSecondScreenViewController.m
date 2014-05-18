@@ -32,7 +32,7 @@
 
 - (void)sendCoordinateData
 {
-    if( wasSent)
+    if (wasSent)
         return;
     
     NSString * token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
@@ -163,7 +163,7 @@
     alertWasShown = NO;
     wasSent = NO;
     
-    [self setSecondsRemaining:10];
+    [self setSecondsRemaining:30];
     [self countdownTimer];
 }
 
