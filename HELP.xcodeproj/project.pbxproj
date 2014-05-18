@@ -41,7 +41,6 @@
 		6588F3CA1927A9E700700E81 /* HLPThirdScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588F3C91927A9E700700E81 /* HLPThirdScreenViewController.m */; };
 		6588F3CC1927AAD800700E81 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6588F3CB1927AAD800700E81 /* MapKit.framework */; };
 		6588F4051927E8D500700E81 /* HLPDecisionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588F4041927E8D500700E81 /* HLPDecisionController.m */; };
-		65EBCEBE19276C0C000B7FE8 /* HLPSecondScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EBCEBD19276C0C000B7FE8 /* HLPSecondScreenViewController.m */; };
 		65EBCEC119276C40000B7FE8 /* HLPFirstScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EBCEC019276C40000B7FE8 /* HLPFirstScreenViewController.m */; };
 		86A759E31927B2EB00E24B46 /* HLPServerManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A759E21927B2EB00E24B46 /* HLPServerManipulator.m */; };
 		86A759E61927BF5400E24B46 /* HLPRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A759E51927BF5400E24B46 /* HLPRegistrationViewController.m */; };
@@ -100,8 +99,6 @@
 		6588F3CB1927AAD800700E81 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6588F4031927E8D500700E81 /* HLPDecisionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPDecisionController.h; sourceTree = "<group>"; };
 		6588F4041927E8D500700E81 /* HLPDecisionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPDecisionController.m; sourceTree = "<group>"; };
-		65EBCEBC19276C0C000B7FE8 /* HLPSecondScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPSecondScreenViewController.h; sourceTree = "<group>"; };
-		65EBCEBD19276C0C000B7FE8 /* HLPSecondScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPSecondScreenViewController.m; sourceTree = "<group>"; };
 		65EBCEBF19276C40000B7FE8 /* HLPFirstScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPFirstScreenViewController.h; sourceTree = "<group>"; };
 		65EBCEC019276C40000B7FE8 /* HLPFirstScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPFirstScreenViewController.m; sourceTree = "<group>"; };
 		86A759E11927B2EB00E24B46 /* HLPServerManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPServerManipulator.h; sourceTree = "<group>"; };
@@ -213,8 +210,6 @@
 				86A759E81927D0A500E24B46 /* HLPSmsViewController.m */,
 				6588F3C81927A9E700700E81 /* HLPThirdScreenViewController.h */,
 				6588F3C91927A9E700700E81 /* HLPThirdScreenViewController.m */,
-				65EBCEBC19276C0C000B7FE8 /* HLPSecondScreenViewController.h */,
-				65EBCEBD19276C0C000B7FE8 /* HLPSecondScreenViewController.m */,
 				6572E10519275920009EEC0D /* HLPViewController.h */,
 				6572E10619275920009EEC0D /* HLPViewController.m */,
 				6572E10819275920009EEC0D /* Images.xcassets */,
@@ -362,7 +357,6 @@
 				6572E0FD19275920009EEC0D /* main.m in Sources */,
 				6572E10719275920009EEC0D /* HLPViewController.m in Sources */,
 				65EBCEC119276C40000B7FE8 /* HLPFirstScreenViewController.m in Sources */,
-				65EBCEBE19276C0C000B7FE8 /* HLPSecondScreenViewController.m in Sources */,
 				6588F3CA1927A9E700700E81 /* HLPThirdScreenViewController.m in Sources */,
 				6588F4051927E8D500700E81 /* HLPDecisionController.m in Sources */,
 				6572E10119275920009EEC0D /* HLPAppDelegate.m in Sources */,

@@ -21,7 +21,7 @@
 
 @implementation HLPThirdScreenViewController
 
-- (IBAction)callTouched:(id)sender
+- (void)sendCoordinateData
 {
     NSString * token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     NSString * lat = [NSString stringWithFormat:@"%f", [HLPPosition sharedHLPPositionManager].coordinates.latitude];
@@ -100,12 +100,12 @@
     
     [mapView setRegion:mapRegion animated: YES];
     [[HLPPosition sharedHLPPositionManager] setCoordinates:userLocation.location.coordinate];
-    [self.spinner startAnimating];
     [[NSNotificationCenter defaultCenter]
                                             addObserver:self
-                                            selector:@selector(setButtonTitle)
+                                            selector:@selector(processUpdatedAddress)
                                             name:@"Geocoding Done"
                                             object:nil];
+    
 }
 
 - (NSString *)urlEncodeValue:(NSString *)str
@@ -123,6 +123,12 @@
 {
     [self.addressButton setTitle:[[HLPPosition sharedHLPPositionManager] address] forState:UIControlStateNormal];
     [self.spinner stopAnimating];
+}
+
+- (void)processUpdatedAddress
+{
+    [self setButtonTitle];
+    [self sendCoordinateData];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -145,6 +151,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.spinner startAnimating];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Geocoding Done" object:nil];
 }
 
 - (void)awakeFromNib
