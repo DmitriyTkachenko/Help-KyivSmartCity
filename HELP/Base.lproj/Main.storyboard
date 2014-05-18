@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Second Screen View Controller - Определяем местоположение-->
+        <!--Second Screen View Controller - Информация о вызове-->
         <scene sceneID="do0-iO-iBs">
             <objects>
                 <viewController id="kV8-F7-sN7" customClass="HLPSecondScreenViewController" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKu-5O-oEU">
-                                <rect key="frame" x="104" y="290" width="115" height="30"/>
+                                <rect key="frame" x="103" y="291" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Первая помощь">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,7 +54,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Определяем местоположение" id="768-ru-BXB"/>
+                    <navigationItem key="navigationItem" title="Информация о вызове" id="768-ru-BXB">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="qzz-6a-5m9"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressButton" destination="wd2-B4-QCI" id="5do-zF-De9"/>
                         <outlet property="mapView" destination="ziz-rR-022" id="YlW-FZ-mcT"/>
@@ -65,7 +67,7 @@
             </objects>
             <point key="canvasLocation" x="-70" y="452"/>
         </scene>
-        <!--Reasons View Controller - Выберите симптомы-->
+        <!--Reasons View Controller - Опишите ситуацию-->
         <scene sceneID="i4F-kT-bAQ">
             <objects>
                 <tableViewController id="U3P-Pg-Hgz" customClass="HLPReasonsViewController" sceneMemberID="viewController">
@@ -88,7 +90,9 @@
                             <outlet property="delegate" destination="U3P-Pg-Hgz" id="ibB-ut-5Uc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Выберите симптомы" id="8O5-NZ-mZ1"/>
+                    <navigationItem key="navigationItem" title="Опишите ситуацию" id="8O5-NZ-mZ1">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="g5L-dQ-85t"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="GQg-so-EfX" kind="push" identifier="firstAid" id="jVb-oL-N8x"/>
                     </connections>

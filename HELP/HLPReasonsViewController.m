@@ -44,7 +44,7 @@
     
     [self.navigationItem setRightBarButtonItem:barDoneButton];
     
-    self.symptomes = [NSMutableArray arrayWithObjects: @"First",@"FSecond",@"Third",@"Fourth", nil];
+    self.symptomes = [NSMutableArray arrayWithObjects: @"Критическое состояние", @"Больной – ребёнок", @"Психоз", @"Роды", @"Отравление", @"Ожог", @"Затруднение дыхания", @"Кровотечение", @"Политравма", nil];
     
     
 }

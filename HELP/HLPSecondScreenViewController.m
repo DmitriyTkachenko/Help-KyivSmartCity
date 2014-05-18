@@ -87,7 +87,7 @@
     
     if ([dictionary[@"status"] isEqualToString:@"we have got your ticket"] && !alertWasShown)
     {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Скорая помощь едет" message:@"Ваш запрос обработан и скорая помощь выехала. Спасибо, что спасаете жизни!" delegate:self cancelButtonTitle:@"ОК" otherButtonTitles:nil, nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Скорая помощь вызвана" message:@"Ваш запрос поступил диспетчеру. Спасибо, что спасаете жизни!" delegate:self cancelButtonTitle:@"ОК" otherButtonTitles:nil, nil];
         [alert show];
         alertWasShown = YES;
     }
