@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HELP/HLPSecondScreenViewController.m"
-            timestampString = "422114411.87856"
+            timestampString = "422117037.685652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>

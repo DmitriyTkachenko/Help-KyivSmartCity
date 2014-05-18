@@ -30,6 +30,31 @@
 
 @implementation HLPSecondScreenViewController
 
+- (IBAction)carArrived:(id)sender
+{
+    NSString * token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    
+    NSString *post = [NSString stringWithFormat:@"token=%@&ticketId=%@", [self urlEncodeValue: token], [self urlEncodeValue: ticketID] ];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:@"http://tilastserver.pp.ua:3000/api/closeTicket"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if ( connection )
+    {
+        mutableData = [[NSMutableData alloc] init];
+        wasSent = YES;
+    }
+
+}
+
 - (void)sendCoordinateData
 {
     if (wasSent)
