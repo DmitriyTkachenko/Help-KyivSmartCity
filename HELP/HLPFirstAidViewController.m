@@ -69,9 +69,11 @@
     hLPFirstAidPageContentViewController.titleText = self.pageTitles[index];
     hLPFirstAidPageContentViewController.contentTextString = self.pageContents[index];
     hLPFirstAidPageContentViewController.pageIndex = index;
-    
-    if (index == [self.pageTitles count] - 1)
-        [hLPFirstAidPageContentViewController.returnToInfoButton setHidden:YES];
+    if (index != [self.pageTitles count] - 1) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            hLPFirstAidPageContentViewController.returnToInfoButton.hidden = YES; //works
+        });
+    }
     
     return hLPFirstAidPageContentViewController;
 }

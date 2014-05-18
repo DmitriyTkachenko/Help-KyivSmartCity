@@ -37,5 +37,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)returnToInfo:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 @end

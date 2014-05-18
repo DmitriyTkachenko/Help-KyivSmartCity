@@ -222,7 +222,6 @@
     secondsRemaining = seconds;
     self.callProcessedText.text = [NSString stringWithFormat:@"Машина отправлена. Ориентировочное время прибытия:"];
     self.callProcessedText.textAlignment = NSTextAlignmentCenter;
-
 }
     
 @end
