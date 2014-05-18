@@ -102,7 +102,7 @@
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Скорая помощь вызвана" message:@"Ваш запрос поступил диспетчеру. Спасибо, что спасаете жизни!" delegate:self cancelButtonTitle:@"ОК" otherButtonTitles:nil, nil];
         [alert show];
         alertWasShown = YES;
-        ticketID = dictionary[@"ticketID"];
+        ticketID = dictionary[@"ticketId"];
     }
 } 
 
@@ -191,7 +191,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSLog(@"");
-    if ([[segue identifier] isEqualToString:@"firstAid"])
+    if ([[segue identifier] isEqualToString:@"reasons"])
     {
         // Get reference to the destination view controller
         HLPReasonsViewController *vc = [segue destinationViewController];

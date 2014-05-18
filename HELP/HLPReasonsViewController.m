@@ -68,11 +68,18 @@
     {
         NSString * str = [NSString stringWithFormat:@"%@", self.symptomes[path.row] ];
         [syms addObject:str];
-        sentStr = [sentStr stringByAppendingString:[NSString stringWithFormat:@"'%@', ", str]];
+        sentStr = [sentStr stringByAppendingString:[NSString stringWithFormat:@"\"%@\", ", str]];
     }
     sentStr = [NSString stringWithFormat:@"%@%@%@", @"[", sentStr, @"]"];
+
+    NSRange lastComma = [sentStr rangeOfString:@"," options:NSBackwardsSearch];
     
-    NSString *post = [NSString stringWithFormat:@"token=%@&ticketId=%@&symptomes=%@", [self urlEncodeValue: token], [self urlEncodeValue: self.tiketID], [self urlEncodeValue: sentStr] ];
+    if(lastComma.location != NSNotFound) {
+        sentStr = [sentStr stringByReplacingCharactersInRange:lastComma
+                                           withString: @""];
+    }
+    
+    NSString *post = [NSString stringWithFormat:@"token=%@&ticketId=%@&additionalInfo=%@", [self urlEncodeValue: token], [self urlEncodeValue: self.tiketID], [self urlEncodeValue: sentStr] ];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
