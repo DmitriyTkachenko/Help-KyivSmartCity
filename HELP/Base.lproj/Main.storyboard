@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Third Screen View Controller-->
+        <!--Second Screen View Controller-->
         <scene sceneID="do0-iO-iBs">
             <objects>
-                <viewController id="kV8-F7-sN7" customClass="HLPThirdScreenViewController" sceneMemberID="viewController">
+                <viewController id="kV8-F7-sN7" customClass="HLPSecondScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U4Q-VZ-AB0"/>
                         <viewControllerLayoutGuide type="bottom" id="485-zh-ZPc"/>

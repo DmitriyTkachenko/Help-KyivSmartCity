@@ -119,7 +119,7 @@
         HLPFirstAidViewController *vc = [segue destinationViewController];
         
         // Pass any objects to the view controller here, like...
-        vc.simptomes = @[@"Over Fuck", @"Programmer", @"Koala"];
+        vc.symptomes = @[@"Over Fuck", @"Programmer", @"Koala"];
     }
 }
 

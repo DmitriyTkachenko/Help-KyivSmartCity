@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 WildSpirit. All rights reserved.
 //
 
-#import "HLPThirdScreenViewController.h"
+#import "HLPSecondScreenViewController.h"
 
-@interface HLPThirdScreenViewController () <MKMapViewDelegate>
+@interface HLPSecondScreenViewController () <MKMapViewDelegate>
 {
     NSMutableData * mutableData;
 }
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation HLPThirdScreenViewController
+@implementation HLPSecondScreenViewController
 
 - (void)sendCoordinateData
 {

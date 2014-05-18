@@ -40,7 +40,7 @@
 		6572E12619275E85009EEC0D /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6572E12519275E85009EEC0D /* GoogleMaps.framework */; };
 		6572E12C19276290009EEC0D /* HLPPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6572E12B19276290009EEC0D /* HLPPosition.m */; };
 		6572E12E192762C0009EEC0D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6572E12D192762C0009EEC0D /* CoreLocation.framework */; };
-		6588F3CA1927A9E700700E81 /* HLPThirdScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588F3C91927A9E700700E81 /* HLPThirdScreenViewController.m */; };
+		6588F3CA1927A9E700700E81 /* HLPSecondScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588F3C91927A9E700700E81 /* HLPSecondScreenViewController.m */; };
 		6588F3CC1927AAD800700E81 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6588F3CB1927AAD800700E81 /* MapKit.framework */; };
 		6588F4051927E8D500700E81 /* HLPDecisionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588F4041927E8D500700E81 /* HLPDecisionController.m */; };
 		65EBCEC119276C40000B7FE8 /* HLPFirstScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EBCEC019276C40000B7FE8 /* HLPFirstScreenViewController.m */; };
@@ -102,8 +102,8 @@
 		6572E12A19276290009EEC0D /* HLPPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPPosition.h; sourceTree = "<group>"; };
 		6572E12B19276290009EEC0D /* HLPPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPPosition.m; sourceTree = "<group>"; };
 		6572E12D192762C0009EEC0D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		6588F3C81927A9E700700E81 /* HLPThirdScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPThirdScreenViewController.h; sourceTree = "<group>"; };
-		6588F3C91927A9E700700E81 /* HLPThirdScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPThirdScreenViewController.m; sourceTree = "<group>"; };
+		6588F3C81927A9E700700E81 /* HLPSecondScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPSecondScreenViewController.h; sourceTree = "<group>"; };
+		6588F3C91927A9E700700E81 /* HLPSecondScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPSecondScreenViewController.m; sourceTree = "<group>"; };
 		6588F3CB1927AAD800700E81 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6588F4031927E8D500700E81 /* HLPDecisionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPDecisionController.h; sourceTree = "<group>"; };
 		6588F4041927E8D500700E81 /* HLPDecisionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPDecisionController.m; sourceTree = "<group>"; };
@@ -160,6 +160,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65513D791928ACA800EAF604 /* First Aid */ = {
+			isa = PBXGroup;
+			children = (
+				65513D751928AB1A00EAF604 /* HLPFirstAidPageContentViewController.h */,
+				65513D761928AB1A00EAF604 /* HLPFirstAidPageContentViewController.m */,
+				65513D721928AAC500EAF604 /* HLPFirstAidPageViewController.h */,
+				65513D731928AAC500EAF604 /* HLPFirstAidPageViewController.m */,
+				86FFF5DC1928A5A2000777D1 /* HLPFirstAidViewController.h */,
+				86FFF5DD1928A5A2000777D1 /* HLPFirstAidViewController.m */,
+			);
+			name = "First Aid";
+			sourceTree = "<group>";
+		};
+		65513D7A1928ACCE00EAF604 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				86A759E71927D0A500E24B46 /* HLPSmsViewController.h */,
+				86A759E81927D0A500E24B46 /* HLPSmsViewController.m */,
+				86A759E41927BF5400E24B46 /* HLPRegistrationViewController.h */,
+				86A759E51927BF5400E24B46 /* HLPRegistrationViewController.m */,
+			);
+			name = Registration;
+			sourceTree = "<group>";
+		};
 		6572E0E419275920009EEC0D = {
 			isa = PBXGroup;
 			children = (
@@ -216,28 +240,20 @@
 				6572E0FF19275920009EEC0D /* HLPAppDelegate.h */,
 				6572E10019275920009EEC0D /* HLPAppDelegate.m */,
 				6572E10219275920009EEC0D /* Main.storyboard */,
-				65513D751928AB1A00EAF604 /* HLPFirstAidPageContentViewController.h */,
-				65513D761928AB1A00EAF604 /* HLPFirstAidPageContentViewController.m */,
-				65513D721928AAC500EAF604 /* HLPFirstAidPageViewController.h */,
-				65513D731928AAC500EAF604 /* HLPFirstAidPageViewController.m */,
+				65513D791928ACA800EAF604 /* First Aid */,
 				6588F4031927E8D500700E81 /* HLPDecisionController.h */,
 				6588F4041927E8D500700E81 /* HLPDecisionController.m */,
-				86A759E71927D0A500E24B46 /* HLPSmsViewController.h */,
-				86A759E81927D0A500E24B46 /* HLPSmsViewController.m */,
-				6588F3C81927A9E700700E81 /* HLPThirdScreenViewController.h */,
-				6588F3C91927A9E700700E81 /* HLPThirdScreenViewController.m */,
+				65513D7A1928ACCE00EAF604 /* Registration */,
+				6588F3C81927A9E700700E81 /* HLPSecondScreenViewController.h */,
+				6588F3C91927A9E700700E81 /* HLPSecondScreenViewController.m */,
 				6572E10519275920009EEC0D /* HLPViewController.h */,
 				6572E10619275920009EEC0D /* HLPViewController.m */,
 				6572E10819275920009EEC0D /* Images.xcassets */,
 				6572E0F719275920009EEC0D /* Supporting Files */,
 				86A759E11927B2EB00E24B46 /* HLPServerManipulator.h */,
 				86A759E21927B2EB00E24B46 /* HLPServerManipulator.m */,
-				86A759E41927BF5400E24B46 /* HLPRegistrationViewController.h */,
-				86A759E51927BF5400E24B46 /* HLPRegistrationViewController.m */,
 				86FFF5D91928A4EF000777D1 /* HLPReasonsViewController.h */,
 				86FFF5DA1928A4EF000777D1 /* HLPReasonsViewController.m */,
-				86FFF5DC1928A5A2000777D1 /* HLPFirstAidViewController.h */,
-				86FFF5DD1928A5A2000777D1 /* HLPFirstAidViewController.m */,
 			);
 			path = HELP;
 			sourceTree = "<group>";
@@ -379,7 +395,7 @@
 				86FFF5DB1928A4EF000777D1 /* HLPReasonsViewController.m in Sources */,
 				6572E10719275920009EEC0D /* HLPViewController.m in Sources */,
 				65EBCEC119276C40000B7FE8 /* HLPFirstScreenViewController.m in Sources */,
-				6588F3CA1927A9E700700E81 /* HLPThirdScreenViewController.m in Sources */,
+				6588F3CA1927A9E700700E81 /* HLPSecondScreenViewController.m in Sources */,
 				6588F4051927E8D500700E81 /* HLPDecisionController.m in Sources */,
 				65513D771928AB1A00EAF604 /* HLPFirstAidPageContentViewController.m in Sources */,
 				6572E10119275920009EEC0D /* HLPAppDelegate.m in Sources */,

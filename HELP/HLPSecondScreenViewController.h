@@ -10,6 +10,6 @@
 #import <MapKit/MapKit.h>
 #import "HLPPosition.h"
 
-@interface HLPThirdScreenViewController : UIViewController <MKMapViewDelegate>
+@interface HLPSecondScreenViewController : UIViewController <MKMapViewDelegate>
 
 @end
