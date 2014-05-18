@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface HLPFirstAidPageContentViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextView *contentText;
 
+@property NSUInteger pageIndex;
+@property NSString *titleText;
+@property NSString *contentTextString;
+@property NSString *imageFile;
 @end

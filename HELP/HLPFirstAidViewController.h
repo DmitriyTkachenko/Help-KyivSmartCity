@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HLPFirstAidPageContentViewController.h"
 
-@interface HLPFirstAidViewController : UIViewController
+@interface HLPFirstAidViewController : UIViewController <UIPageViewControllerDataSource>
 
 @property (nonatomic, strong) NSArray *symptomes;
+@property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) NSArray *pageTitles;
+@property (strong, nonatomic) NSArray *pageImages;
+@property (strong, nonatomic) NSArray *pageContents;
 
 @end

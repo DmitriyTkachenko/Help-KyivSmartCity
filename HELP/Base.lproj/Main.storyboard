@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="MPa-70-uPF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="MPa-70-uPF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Second Screen View Controller-->
+        <!--Second Screen View Controller - Определяем местоположение-->
         <scene sceneID="do0-iO-iBs">
             <objects>
                 <viewController id="kV8-F7-sN7" customClass="HLPSecondScreenViewController" sceneMemberID="viewController">
@@ -90,7 +90,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Выберите симптомы" id="8O5-NZ-mZ1"/>
                     <connections>
-                        <segue destination="tNm-Ci-kG8" kind="push" identifier="firstAid" id="5mH-90-5pg"/>
+                        <segue destination="GQg-so-EfX" kind="push" identifier="firstAid" id="jVb-oL-N8x"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9li-Da-KJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,32 +98,31 @@
             <point key="canvasLocation" x="446" y="452"/>
         </scene>
         <!--First Aid View Controller-->
-        <scene sceneID="4Ou-kK-fQh">
+        <scene sceneID="i79-j5-NwR">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="tNm-Ci-kG8" customClass="HLPFirstAidViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="8SK-XR-u1F"/>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4eM-0y-GCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="906" y="452"/>
-        </scene>
-        <!--First Aid Page View Controller-->
-        <scene sceneID="eUh-WS-amP">
-            <objects>
-                <viewController id="mUI-fb-6L8" customClass="HLPFirstAidPageViewController" sceneMemberID="viewController">
+                <viewController id="GQg-so-EfX" customClass="HLPFirstAidViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WTy-lv-dpL"/>
-                        <viewControllerLayoutGuide type="bottom" id="fre-lC-aCH"/>
+                        <viewControllerLayoutGuide type="top" id="dU2-Ab-x8N"/>
+                        <viewControllerLayoutGuide type="bottom" id="vep-qU-myt"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ggM-kL-N3x">
+                    <view key="view" contentMode="scaleToFill" id="Hdh-v9-y6u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bl2-5z-J7K"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Do7-Ec-bS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lmK-lR-nrl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1375" y="144"/>
+            <point key="canvasLocation" x="906" y="452"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Z0a-f5-TXK">
+            <objects>
+                <pageViewController storyboardIdentifier="HLPFirstAidPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="5YM-6A-81L" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uu7-rp-igs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1378" y="67"/>
         </scene>
         <!--First Screen View Controller - FirstScreenController-->
         <scene sceneID="ufC-wZ-h7g">
@@ -277,10 +276,10 @@
             </objects>
             <point key="canvasLocation" x="906" y="1189"/>
         </scene>
-        <!--View Controller-->
+        <!--First Aid Page Content View Controller - HLPFirstAidPageContentViewController-->
         <scene sceneID="fCs-T0-hHM">
             <objects>
-                <viewController id="zw8-d9-cPd" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HLPFirstAidPageContentViewController" title="HLPFirstAidPageContentViewController" id="zw8-d9-cPd" customClass="HLPFirstAidPageContentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TsG-uc-O8g"/>
                         <viewControllerLayoutGuide type="bottom" id="cBQ-eZ-f8q"/>
@@ -288,8 +287,33 @@
                     <view key="view" contentMode="scaleToFill" id="1U3-or-xL1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PzJ-r3-xk3">
+                                <rect key="frame" x="55" y="68" width="210" height="210"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnH-lK-Jez">
+                                <rect key="frame" x="20" y="20" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0c-AD-8Sh">
+                                <rect key="frame" x="20" y="286" width="280" height="228"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="PzJ-r3-xk3" id="aku-TU-vTy"/>
+                        <outlet property="contentText" destination="a0c-AD-8Sh" id="Bp7-qK-RBx"/>
+                        <outlet property="titleLabel" destination="pnH-lK-Jez" id="h7z-ZF-jBP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qWu-Kb-ilf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
